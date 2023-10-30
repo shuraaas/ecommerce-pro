@@ -11,7 +11,7 @@ const Layout = () => {
 
       <main>
         {/* <Outlet /> */}
-        {/* <Home /> */}
+        <Home />
         <ProductsList />
       </main>
 
