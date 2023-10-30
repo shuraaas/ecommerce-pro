@@ -1,0 +1,30 @@
+[
+  {
+    "id": "1",
+    "image": "https://stroimaterialy-optom.ru/upload/iblock/348/348c04054b4a2ac51ec7ed017afeddd4.jpg",
+    "price": "100",
+    "brand": "qweqrt",
+    "title": "Дремель"
+  },
+  {
+    "id": "2",
+    "image": "https://ae04.alicdn.com/kf/HTB1bfxmeFmWBuNjSspdq6zugXXaj.jpg",
+    "price": "200",
+    "brand": "qweqrt",
+    "title": "Отвертки"
+  },
+  {
+    "id": "3",
+    "image": "https://noyabrsk.specins.ru/upload/iblock/3f5/h22ipmxhxr57wndyy4um7prn49mbl7zd/0341e9e7_f36f_11e6_8153_00155d000409_6c5e493a_c157_11e8_81cd_00155d000409.jpg",
+    "price": "300",
+    "brand": "qweqrt",
+    "title": "Бензопила"
+  }
+  {
+    "id": "4",
+    "image": "https://cdn1.ozone.ru/s3/multimedia-o/6414468816.jpg",
+    "price": "400",
+    "brand": "qweqrt",
+    "title": "Умная лампочка"
+  }
+]

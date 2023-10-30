@@ -1,0 +1,101 @@
+@import '../../styles/variables.scss';
+
+.secondary {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  background-color: $color-primary;
+  color: #ffffff;
+}
+
+.container {
+  max-width: 1185px;
+  width: 100%;
+  padding: 12px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.containerInner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.city {
+  transition: color .2s  linear;
+
+  &:hover {
+    color: #a1001f;
+    cursor: pointer;
+  }
+}
+
+.city::before {
+  content: url('../../assets/icons/location.png');
+  margin-right: 5px;
+}
+
+.phoneList {
+  display: flex;
+  gap: 20px;
+}
+
+.phone {
+  transition: color .2s  linear;
+
+  &:hover {
+    color: #a1001f;
+    cursor: pointer;
+  }
+}
+
+.headerContainer {
+  background-color: red;
+}
+
+.mainLogo {
+  width: 208px;
+  height: 47px;
+  background: url('../../assets/logo/main-logo.png') no-repeat center / cover;
+}
+
+.inputSearch {
+  padding: 0;
+  border: 2px solid #ccc;
+}
+
+.headerTooltip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  box-shadow: 0 16px 16px -16px rgba(43,52,69,.1);
+
+  .categoryBtn {
+    border: 0;
+    border-radius: 5px;
+    background-color: #e6ecf6;
+    height: 36px;
+    padding: 0 16px;
+  }
+}
+
+.navbar {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 20px;
+
+  .navbarLink {
+    color: #333;
+    text-decoration: none;
+
+    transition: color .2s linear;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}
