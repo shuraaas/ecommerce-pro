@@ -23,7 +23,7 @@
 }
 
 .city {
-  transition: color .2s  linear;
+  transition: color 0.2s linear;
 
   &:hover {
     color: #a1001f;
@@ -32,7 +32,7 @@
 }
 
 .city::before {
-  content: url('../../assets/icons/location.png');
+  content: url('../../../public/icons/location.png');
   margin-right: 5px;
 }
 
@@ -42,7 +42,7 @@
 }
 
 .phone {
-  transition: color .2s  linear;
+  transition: color 0.2s linear;
 
   &:hover {
     color: #a1001f;
@@ -54,15 +54,104 @@
   background-color: red;
 }
 
+.headerMain {
+  display: flex;
+  padding: 20px 0;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+
+  .search {
+    width: 50%;
+    display: flex;
+
+    .inputSearch {
+      width: 100%;
+      height: 100%;
+      padding: 10px;
+      border: 2px solid #ccc;
+      border-right-width: 0;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+      outline: none;
+
+      &:focus {
+        border-color: $color-primary;
+      }
+    }
+
+    .btnSearch {
+      width: 40px;
+      border-radius: 0 10px 10px 0;
+      border: 0;
+      background-color: $color-primary;
+      transition: background-color 0.2s linear;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &:hover {
+        background-color: #bf0025;
+        cursor: pointer;
+      }
+      // border-top-left-radius: 0px;
+      // border-top-right-radius: 0px;
+      // border-bottom-right-radius: 0px;
+      // border-bottom-left-radius: 0px;
+    }
+
+    img {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+    }
+  }
+
+  .headerUser {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .user {
+      width: 40px;
+      height: 40px;
+      border: 0;
+      border-radius: 50%;
+      transition: background-color 0.2s linear;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    .cart {
+      width: 40px;
+      height: 40px;
+      border: 0;
+      border-radius: 50%;
+      transition: background-color 0.2s linear;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}
+
 .mainLogo {
   width: 208px;
   height: 47px;
   background: url('../../assets/logo/main-logo.png') no-repeat center / cover;
-}
-
-.inputSearch {
-  padding: 0;
-  border: 2px solid #ccc;
 }
 
 .headerTooltip {
@@ -70,14 +159,27 @@
   justify-content: space-between;
   align-items: center;
   height: 50px;
-  box-shadow: 0 16px 16px -16px rgba(43,52,69,.1);
+  box-shadow: 0 16px 16px -16px rgba(43, 52, 69, 0.1);
+  background-color: #ebebeb;
+  border-radius: 5px;
+  padding-right: 20px;
 
   .categoryBtn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     border: 0;
     border-radius: 5px;
-    background-color: #e6ecf6;
-    height: 36px;
+    // background-color: #ebebeb;
     padding: 0 16px;
+    width: 30%;
+    height: 100%;
+    transition: background-color 0.2s linear;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #d2d2d2;
+    }
   }
 }
 
@@ -91,11 +193,12 @@
   .navbarLink {
     color: #333;
     text-decoration: none;
-
-    transition: color .2s linear;
+    padding: 10px 0;
+    transition: color 0.2s linear;
 
     &:hover {
       color: $color-primary;
+      border-bottom: 2px solid $color-primary;
     }
   }
 }

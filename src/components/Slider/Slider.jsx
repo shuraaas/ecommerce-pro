@@ -13,8 +13,8 @@ const Slider = ({ slides }) => {
       slidesPerView={1}
       navigation
       loop
-      autoHeight
-      autoplay
+      // autoHeight
+      // autoplay
       speed={1000}
       pagination={{ clickable: true }}
     >
