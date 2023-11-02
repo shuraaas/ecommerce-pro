@@ -1,7 +1,7 @@
 import styles from './Header.module.scss';
 import { Link } from 'react-router-dom';
 
-const Header = () => {
+const Header = ({ onClick }) => {
   return (
     <header>
       <div className={styles.secondary}>
@@ -18,8 +18,8 @@ const Header = () => {
 
       <div className={styles.container}>
         <div className={styles.headerMain}>
-          <Link to="/">
-            <img src="/logo/main-logo.png" alt="Мк электро" />
+          <Link className={styles.link} to="/">
+            <img className={styles.logo} src="/logo/main-logo.png" alt="Мк электро" />
           </Link>
           <div className={styles.search}>
             <input className={styles.inputSearch} type="text" placeholder='Поиск по товарам...' />
@@ -28,7 +28,7 @@ const Header = () => {
             </button>
           </div>
           <div className={styles.headerUser}>
-            <button className={styles.user}>
+            <button onClick={onClick} className={styles.user}>
               <img src="/icons/user.svg" alt="Кнопка Аккаунт" />
             </button>
             <button className={styles.cart}>

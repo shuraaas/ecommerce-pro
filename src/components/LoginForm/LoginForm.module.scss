@@ -1,0 +1,56 @@
+@import '../../styles/variables.scss';
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+
+  .content {
+    // display: flex;
+    // flex-direction: column;
+    // padding: 0;
+    // margin: 0;
+    // border: 0;
+    position: relative;
+    margin-bottom: 32px;
+  }
+
+  .label {
+    position: absolute;
+    top: -20px;
+    left: 0;
+    transition: .2s;
+  }
+
+  .input {
+    width: 100%;
+    padding: 0 0 10px 0;
+    border: 0;
+    border-bottom: 1px solid #e0e0e0;
+    background-color: transparent;
+    outline: none;
+    transition: .2s;
+
+    &:focus {
+      border-color: red;
+    }
+  }
+
+  .submit {
+    padding: 10px 20px;
+    border: 0;
+    border-radius: 5px;
+    background-color: #ddd;
+    outline: none;
+    cursor: pointer;
+    transition: .2s;
+
+    &:hover {
+      background-color: $color-primary;
+    }
+
+    &:focus {
+      background-color: $color-primary;
+    }
+  }
+}

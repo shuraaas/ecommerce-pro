@@ -32,17 +32,6 @@
     li:hover {
       border-left: 2px solid $color-primary;
     }
-    // li:before {
-    //   content: '';
-    //   display: block;
-    //   width: 2px;
-    //   height: 45px;
-    //   background-color: red;
-    //   position: absolute;
-    //   top: 0;
-    //   left: 0;
-    //   bottom: 0;
-    // }
   }
 
   .menuItem {
@@ -58,10 +47,18 @@
       color: red;
     }
   }
+
+  @media screen and (max-width: 400px) {
+    display: none;
+  }
 }
 
 .homeSlider {
   width: 70%;
   border-radius: 5px;
   overflow: hidden;
+
+  @media screen and (max-width: 400px) {
+    width: 100%;
+  }
 }

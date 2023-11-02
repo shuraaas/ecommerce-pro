@@ -13,7 +13,7 @@ module.exports = {
   settings: { react: { version: '18.2' } },
   plugins: ['react-refresh'],
   rules: {
-    'react/prop-types': off,
+    'react/prop-types': 'off',
     'no-var': 'error',
     'prefer-const': 'warn',
     'react-refresh/only-export-components': [

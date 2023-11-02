@@ -6,6 +6,10 @@
   align-items: center;
   background-color: $color-primary;
   color: #ffffff;
+
+  @media screen and (max-width: 400px) {
+    display: none;
+  }
 }
 
 .container {
@@ -61,6 +65,12 @@
   align-items: center;
   height: 50px;
 
+  .link {
+    @media screen and (max-width: 400px) {
+      display: none;
+    }
+  }
+
   .search {
     width: 50%;
     display: flex;
@@ -105,6 +115,10 @@
       height: 20px;
       position: absolute;
     }
+
+    @media screen and (max-width: 400px) {
+      flex: 1;
+    }
   }
 
   .headerUser {
@@ -145,6 +159,10 @@
         height: 20px;
       }
     }
+  }
+
+  @media screen and (max-width: 400px) {
+    gap: 10px;
   }
 }
 
@@ -200,5 +218,9 @@
       color: $color-primary;
       border-bottom: 2px solid $color-primary;
     }
+  }
+
+  @media screen and (max-width: 400px) {
+    display: none;
   }
 }
