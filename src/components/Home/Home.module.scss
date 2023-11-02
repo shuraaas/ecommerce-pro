@@ -32,6 +32,17 @@
     li:hover {
       border-left: 2px solid $color-primary;
     }
+    // li:before {
+    //   content: '';
+    //   display: block;
+    //   width: 2px;
+    //   height: 45px;
+    //   background-color: red;
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   bottom: 0;
+    // }
   }
 
   .menuItem {

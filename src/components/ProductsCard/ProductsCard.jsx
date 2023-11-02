@@ -2,7 +2,7 @@ import styles from './ProductsCard.module.scss';
 import { useState } from 'react';
 import classNames from 'classnames';
 
-const ProductsCard = ({ image, price, brand, title }) => {
+const ProductsCard = ({ image, price, brand, title, inStock }) => {
   const [counter, setCounter] = useState(0);
 
   const handleRemoveClick = () => {
@@ -16,10 +16,15 @@ const ProductsCard = ({ image, price, brand, title }) => {
       <a href="#">
         <img className={styles.img} src={image} alt={title} />
       </a>
-      <div className={styles.cardInfo}>
-        <div className={styles.info}>
-          <h2 className={styles.title}>{title}</h2>
-          <p className={styles.price}>{price} руб.</p>
+      <div className={styles.info}>
+        <div className={styles.cardInfo}>
+          <div className={styles.infoHeader}>
+            <a className={styles.link} href="#">
+              <h2 className={styles.title}>{title}</h2>
+            </a>
+            <p className={styles.price}>{price} руб.</p>
+          </div>
+          <p className={styles.inStock}>{inStock ? `В наличии: ${inStock} шт.` : `В наличии в других городах`}</p>
         </div>
         <div className={styles.addCart}>
           <button
