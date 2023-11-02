@@ -25,19 +25,19 @@ const Layout = () => {
 
       <div className={styles.bottomNav}>
         <a className={styles.bottomNavLink} href="#">
-          <img src="../../../public/icons/home.svg" alt="" />
+          <img src="/icons/home.svg" alt="" />
           <p>Главная</p>
         </a>
         <a className={styles.bottomNavLink} href="#">
-          <img src="../../../public/icons/categories.svg" alt="" />
+          <img src="/icons/categories.svg" alt="" />
           <p>Категории</p>
         </a>
         <a className={styles.bottomNavLink} href="#">
-          <img src="../../../public/icons/cart.svg" alt="" />
+          <img src="/icons/cart.svg" alt="" />
           <p>Корзина</p>
         </a>
         <a className={styles.bottomNavLink} href="#">
-          <img src="../../../public/icons/user.svg" alt="" />
+          <img src="/icons/user.svg" alt="" />
           <p>Аккаунт</p>
         </a>
       </div>
