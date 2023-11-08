@@ -1,4 +1,4 @@
-@import '../../styles/variables.scss';
+@import '../../scss/_variables.scss';
 
 .productsCard {
   max-width: 300px;
@@ -90,12 +90,12 @@
     }
 
     .btnRemove {
-      background: url('../../../public/icons/minus.svg') no-repeat center / 50%;
+      background: url('/icons/minus.svg') no-repeat center / 50%;
       top: 0;
     }
 
     .btnAdd {
-      background: url('../../../public/icons/plus.svg') no-repeat center / 50%;
+      background: url('/icons/plus.svg') no-repeat center / 50%;
       bottom: 0;
     }
 

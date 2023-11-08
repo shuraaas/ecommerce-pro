@@ -1,7 +1,7 @@
 import styles from './Header.module.scss';
 import { Link } from 'react-router-dom';
 
-const Header = ({ onClick }) => {
+const Header = ({ onClick, onBurgerMenuClick }) => {
   return (
     <header>
       <div className={styles.secondary}>
@@ -18,28 +18,45 @@ const Header = ({ onClick }) => {
 
       <div className={styles.container}>
         <div className={styles.headerMain}>
-          <Link className={styles.link} to="/">
-            <img className={styles.logo} src="/logo/main-logo.png" alt="Мк электро" />
-          </Link>
-          <div className={styles.search}>
-            <input className={styles.inputSearch} type="text" placeholder='Поиск по товарам...' />
-            <button className={styles.btnSearch}>
-              <img src="/icons/search.svg" alt="Иконка поиска" />
-            </button>
+          <div className={styles.headerTop}>
+            <Link className={styles.link} to="/">
+              <img
+                className={styles.logo}
+                src="/logo/main-logo.png"
+                alt="Мк электро"
+              />
+            </Link>
+            <div className={styles.headerUser}>
+              <button onClick={onClick} className={styles.user}>
+                <img src="/icons/user.svg" alt="Кнопка Аккаунт" />
+              </button>
+              <button className={styles.cart}>
+                <img src="/icons/cart.svg" alt="Кнопка Корзина" />
+              </button>
+            </div>
           </div>
-          <div className={styles.headerUser}>
-            <button onClick={onClick} className={styles.user}>
-              <img src="/icons/user.svg" alt="Кнопка Аккаунт" />
-            </button>
-            <button className={styles.cart}>
-              <img src="/icons/cart.svg" alt="Кнопка Корзина" />
-            </button>
+
+          <div className={styles.search}>
+            <button
+              className={styles.burgerMenu}
+              onClick={onBurgerMenuClick}
+            ></button>
+            <div className={styles.inputSearch}>
+              <input
+                className={styles.input}
+                type="text"
+                placeholder="Поиск по товарам..."
+              />
+              <button className={styles.btnSearch}>
+                <img src="/icons/search.svg" alt="Иконка поиска" />
+              </button>
+            </div>
           </div>
         </div>
       </div>
 
-      <div className={styles.container}>
-        <div className={styles.headerTooltip}>
+      <div className={styles.headerTooltip}>
+        <div className={styles.container}>
           <button className={styles.categoryBtn} type="button">
             <svg
               xmlns="http://www.w3.org/2000/svg"

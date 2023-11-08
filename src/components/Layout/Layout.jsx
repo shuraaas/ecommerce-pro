@@ -6,16 +6,21 @@ import Home from '../Home';
 import ProductsList from '../ProductsList';
 import Footer from '../Footer';
 import LoginPopup from '../LoginPopup';
+import MenuMobile from '../MenuMobile';
 
 const Layout = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isOpenBurgerMenu, setIsOpenBurgerMenu] = useState(false);
 
   const handleClick = () => setIsOpen(true);
   const handleClose = () => setIsOpen(false);
 
+  const handleOpenBurgerMenu = () => setIsOpenBurgerMenu(true);
+  const handleCloseBurgerMenu = () => setIsOpenBurgerMenu(false);
+
   return (
     <div className={styles.wrap}>
-      <Header onClick={handleClick} />
+      <Header onClick={handleClick} onBurgerMenuClick={handleOpenBurgerMenu} />
       <main>
         {/* <Outlet /> */}
         <Home />
@@ -43,6 +48,10 @@ const Layout = () => {
       </div>
 
       <LoginPopup isOpen={isOpen} onClose={handleClose} title="Вход" />
+      <MenuMobile
+        isOpen={isOpenBurgerMenu}
+        onClose={handleCloseBurgerMenu}
+      />
     </div>
   );
 };

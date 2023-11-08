@@ -1,3 +1,5 @@
+@import '../../scss/_media_breakpoints.scss';
+
 .container {
   max-width: 1185px;
   width: 100%;
@@ -22,4 +24,10 @@
   list-style: none;
   margin: 0;
   padding: 0 20px;
+}
+
+@include mobile {
+  .container {
+    max-width: calc(375px - 24px);
+  }
 }

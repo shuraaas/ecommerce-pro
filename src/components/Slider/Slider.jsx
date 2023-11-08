@@ -11,10 +11,10 @@ const Slider = ({ slides }) => {
     <Swiper
       modules={[Navigation, Pagination, Autoplay, A11y]}
       slidesPerView={1}
-      navigation
+      // navigation
       loop
-      autoHeight
-      autoplay
+      // autoHeight
+      // autoplay
       speed={1000}
       pagination={{ clickable: true }}
     >

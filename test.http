@@ -1,0 +1,2 @@
+GET http://test.s1lentsorrow.ru/api/v1/categories/ HTTP/1.1
+content-type: application/json

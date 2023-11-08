@@ -10,6 +10,7 @@ const ProductsCard = ({ image, price, brand, title, inStock }) => {
     setCounter(counter - 1);
   };
   const handleAddClick = () => setCounter(counter + 1);
+  
 
   return (
     <li className={styles.productsCard}>

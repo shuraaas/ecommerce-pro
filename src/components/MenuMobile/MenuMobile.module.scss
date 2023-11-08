@@ -1,0 +1,102 @@
+.cover {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: #000;
+  opacity: 0.2;
+  z-index: 10;
+  display: none;
+}
+
+.coverShow {
+  display: block;
+}
+
+.mobileMenuBox {
+  z-index: 11;
+  position: fixed;
+  visibility: hidden;
+  top: 0;
+  left: -100%;
+  width: 250px;
+  height: 100vh;
+  padding: 76px 24px 24px;
+  background: white;
+  box-shadow: 4px 4px 30px 5px rgba(0, 0, 0, 0.1);
+  transition-duration: .25s;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.mobileMenuBoxShow {
+  visibility: visible;
+  left: 0;
+}
+
+.menuHeader {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background: #f8f8f8;
+}
+
+.closeButton {
+  border: 0;
+  width: 20px;
+  height: 20px;
+  background: url('./close.svg') no-repeat center / cover;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.backButton {
+  background: none;
+  border: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  color: red;
+
+  img {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+.item {
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: none;
+  background-size: 10px 10px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0;
+  color: #000;
+
+  img {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+.level {
+  display: flex;
+  transition: transform .2s;
+
+  div {
+    min-width: calc(100% + 24px);
+  }
+}

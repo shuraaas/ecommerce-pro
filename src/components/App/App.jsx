@@ -1,10 +1,15 @@
-import { Routes, Route, Link } from 'react-router-dom';
-import Register from '../../pages/Register';
-import Layout from '../Layout/Layout';
-import NotFoundPage from '../../pages/NotFoundPage';
 import './App.module.scss';
+import axios from 'axios';
+import { Routes, Route, Link } from 'react-router-dom';
+import Register from 'src/pages/Register';
+import NotFoundPage from 'src/pages/NotFoundPage';
+import Layout from 'src/components/Layout';
 
 const App = () => {
+  // axios
+  //   .get('http://test.s1lentsorrow.ru/api/v1/categories/')
+  //   .then(res => console.log(res.data));
+
   return (
     <>
       <Routes>
