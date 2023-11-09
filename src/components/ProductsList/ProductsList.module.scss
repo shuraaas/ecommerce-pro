@@ -3,9 +3,7 @@
 .container {
   max-width: 1185px;
   width: 100%;
-  padding: 12px;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 0 auto;
 }
 
 .productsList {
@@ -29,5 +27,9 @@
 @include mobile {
   .container {
     max-width: calc(375px - 24px);
+  }
+
+  .productsList {
+    padding: 20px 0;
   }
 }

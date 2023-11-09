@@ -1,6 +1,10 @@
 @import '../../scss/_variables.scss';
 @import '../../scss/_media_breakpoints.scss';
 
+.header {
+  padding: 0 0 20px;
+}
+
 .secondary {
   height: 40px;
   display: flex;
@@ -12,7 +16,6 @@
 .container {
   max-width: 1185px;
   width: 100%;
-  padding: 12px;
   margin: 0 auto;
 }
 
@@ -50,16 +53,18 @@
   }
 }
 
-.headerContainer {
-  background-color: red;
-}
-
 .headerMain {
   display: flex;
   padding: 20px 0;
   justify-content: space-between;
   align-items: center;
   height: 50px;
+
+  .headerTop {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+  }
 
   .logo {
     display: block;
@@ -68,8 +73,8 @@
   }
 
   .search {
-    width: 50%;
-    display: flex;
+    // width: 50%;
+    // display: flex;
 
     .burgerMenu {
       display: none;
@@ -78,11 +83,9 @@
     .inputSearch {
       display: flex;
       justify-content: space-between;
-      flex: 1;
 
       .input {
-        flex: 1;
-        width: 100%;
+        width: 150px;
         padding: 10px;
         border: 1px solid #ccc;
         border-right-width: 0;
@@ -92,6 +95,8 @@
 
         &:focus {
           border-color: $color-primary;
+          width: 100%;
+          flex: 1;
         }
       }
 
@@ -109,10 +114,6 @@
           background-color: #bf0025;
           cursor: pointer;
         }
-        // border-top-left-radius: 0px;
-        // border-top-right-radius: 0px;
-        // border-bottom-right-radius: 0px;
-        // border-bottom-left-radius: 0px;
       }
     }
   }
@@ -158,21 +159,18 @@
   }
 }
 
-// .mainLogo {
-//   width: 208px;
-//   height: 47px;
-//   background: url('../../assets/logo/main-logo.png') no-repeat center / cover;
-// }
-
 .headerTooltip {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 50px;
   box-shadow: 0 16px 16px -16px rgba(43, 52, 69, 0.1);
   background-color: #ebebeb;
   border-radius: 5px;
-  padding-right: 20px;
+  padding: 5px 0;
+
+  .headerTooltipInner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0;
+  }
 
   .categoryBtn {
     display: flex;
@@ -180,7 +178,6 @@
     gap: 10px;
     border: 0;
     border-radius: 5px;
-    // background-color: #ebebeb;
     padding: 0 16px;
     width: 30%;
     height: 100%;
@@ -230,12 +227,11 @@
     gap: 20px;
     flex-direction: column;
     padding: 0 0 40px;
+    padding-top: 20px;
 
     .headerTop {
-      display: flex;
       width: 100%;
       justify-content: space-between;
-      align-items: center;
 
       .logo {
         width: 100px;

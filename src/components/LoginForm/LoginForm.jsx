@@ -1,20 +1,29 @@
+import { useForm } from 'react-hook-form';
 import styles from './LoginForm.module.scss';
 
 const LoginForm = ({ buttonText }) => {
-  return (
-    <form className={styles.form}>
+  const { register, handleSubmit } = useForm({
+    defaultValues: {},
+  });
 
+  const submit = data => console.log(data);
+
+  return (
+    <form className={styles.form} onSubmit={handleSubmit(submit)}>
       <div className={styles.content}>
-        <input className={styles.input} name="email" type="text" required />
+        <input
+          className={styles.input}
+          type="text"
+          {...register('email', { required: true })}
+        />
         <label className={styles.label}>Email</label>
       </div>
 
       <div className={styles.content}>
         <input
           className={styles.input}
-          name="password"
           type="password"
-          required
+          {...register('password', { required: true })}
         />
         <label className={styles.label}>Пароль</label>
       </div>

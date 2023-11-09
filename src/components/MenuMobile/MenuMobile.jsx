@@ -79,7 +79,7 @@ const MenuMobile = ({isOpen, onClose}) => {
                 Назад
               </button>
             )}
-            {level === 1 && <div className={styles.backButton}>Меню</div>}
+            {level === 1 && <div className={styles.backButton}>Каталог</div>}
             <button
               className={styles.closeButton}
               onClick={onClose}
