@@ -55,35 +55,38 @@ const LoginForm = ({ buttonText }) => {
   };
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit(submit)}>
-      <div className={styles.content}>
-        <input
-          className={styles.input}
-          type="text"
-          maxLength="18"
-          {...register('phone', { required: true })}
-          onInput={handlePhoneInput}
-          onKeyDown={handlePhoneKeyDown}
-        />
-        <label className={styles.label}>Логин</label>
-      </div>
+    <>
+      <form className={styles.form} onSubmit={handleSubmit(submit)}>
+        <label className={styles.label}>
+          <input
+            className={styles.input}
+            onInput={handlePhoneInput}
+            onKeyDown={handlePhoneKeyDown}
+            type="tel"
+            placeholder=" "
+            {...register('phone', { required: true, maxLength: 18 })}
+          />
+          <span>Логин</span>
+        </label>
 
-      <div className={styles.content}>
-        <input
-          className={styles.input}
-          type="password"
-          {...register('password', { required: true })}
-        />
-        <label className={styles.label}>Пароль</label>
-      </div>
+        <label className={styles.label}>
+          <input
+            className={styles.input}
+            type="password"
+            placeholder=" "
+            {...register('password', { required: true, minLength: 1 })}
+          />
+          <span>Пароль</span>
+        </label>
 
-      <button className={styles.submit} type="submit">
-        {buttonText}
-      </button>
+        <button className={styles.submit} type="submit">
+          {buttonText}
+        </button>
+      </form>
       <span className={styles.bottomSpan}>
         Ещё не зарегистрированы? <a href="#">Регистрация</a>
       </span>
-    </form>
+    </>
   );
 };
 

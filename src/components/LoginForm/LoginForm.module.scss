@@ -3,32 +3,52 @@
 .form {
   display: flex;
   flex-direction: column;
-  width: 300px;
-
-  .content {
-    position: relative;
-    margin-bottom: 32px;
-  }
+  max-width: 300px;
+  width: 100%;
 
   .label {
-    position: absolute;
-    top: -20px;
-    left: 0;
-    transition: .2s;
-  }
-
-  .input {
     width: 100%;
-    padding: 0 0 10px 0;
-    border: 0;
-    border-bottom: 1px solid #e0e0e0;
-    background-color: transparent;
-    outline: none;
-    transition: .2s;
+    height: 50px;
+    margin-bottom: 10px;
+    position: relative;
+    display: block;
 
-    &:focus {
-      border-color: red;
+    &:nth-child(2) {
+      margin-bottom: 20px;
     }
+
+    .input {
+      padding: 10px 0;
+      width: 100%;
+      border: 0;
+      border-bottom: 1px solid #e0e0e0;
+      background-color: transparent;
+      outline: none;
+      transition: 0.2s;
+      position: absolute;
+      bottom: 0;
+
+      &:focus {
+        border-color: red;
+      }
+
+      &:focus + span,
+      &:not(:placeholder-shown) + span {
+        top: 0;
+        font-size: 12px;
+        opacity: .5;
+      }
+    }
+
+    span {
+      position: absolute;
+      font-size: 14px;
+      opacity: 0.5;
+      top: 18px;
+      transition: .2s;
+      cursor: text;
+    }
+
   }
 
   .submit {
@@ -38,7 +58,7 @@
     background-color: #ddd;
     outline: none;
     cursor: pointer;
-    transition: .2s;
+    transition: 0.2s;
 
     &:hover {
       background-color: $color-primary;
@@ -48,21 +68,23 @@
       background-color: $color-primary;
     }
   }
+}
 
-  .bottomSpan {
-    font-size: 12px;
-    font-weight: 300;
-    padding-top: 10px;
-    text-align: center;
+.bottomSpan {
+  font-size: 12px;
+  font-weight: 300;
+  padding-top: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
 
-    a {
-      text-decoration: none;
-      color: $color-primary;
-      font-weight: 400;
+  a {
+    text-decoration: none;
+    color: $color-primary;
+    font-weight: 400;
 
-      &:hover {
-        text-decoration: underline;
-      }
+    &:hover {
+      text-decoration: underline;
     }
   }
 }
