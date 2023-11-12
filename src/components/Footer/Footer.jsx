@@ -3,75 +3,111 @@ import styles from './Footer.module.scss';
 const Footer = () => {
   return (
     <footer className={styles.footer}>
-      <div className={styles.container}>
-        <div className={styles.row}>
-          <div className={styles.logo}>
-            <img src="/logo/main-logo.png" alt="Логотип" />
-            <p className={styles.logoText}>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Reprehenderit suscipit accusamus dolorem eius.
-            </p>
+      <div className={styles.row}>
+        <div className={styles.container}>
+          <div className={styles.rowInner}>
+            <div className={styles.logo}>
+              <img src="/logo/main-logo.png" alt="Логотип" />
+              <div className={styles.call}>
+                <a href="#">Заказать звонок</a>
+                <span>8 800 100-54-41</span>
+                <span>8 984 707-97-98</span>
+              </div>
+            </div>
+            <div className={styles.about}>
+              <h2>Компания</h2>
+              <ul className={styles.aboutMenu}>
+                <li>
+                  <a href="#">Краткая информация</a>
+                </li>
+                <li>
+                  <a href="#">История</a>
+                </li>
+                <li>
+                  <a href="#">Реквизиты</a>
+                </li>
+                <li>
+                  <a href="#">Новости</a>
+                </li>
+                <li>
+                  <a href="#">Вакансии</a>
+                </li>
+                <li>
+                  <a href="#">Адреса магазинов</a>
+                </li>
+                <li>
+                  <a href="#">Отзывы</a>
+                </li>
+              </ul>
+            </div>
+            <div className={styles.customCare}>
+              <h2>Информация</h2>
+              <ul className={styles.customCareMenu}>
+                <li>
+                  <a href="#">Способы оплаты</a>
+                </li>
+                <li>
+                  <a href="#">Пользовательское соглашение</a>
+                </li>
+                <li>
+                  <a href="#">Политика конфиденциальности</a>
+                </li>
+                <li>
+                  <a href="#">Статьи и обзоры</a>
+                </li>
+                <li>
+                  <a href="#">Производители и бренды</a>
+                </li>
+                <li>
+                  <a href="#">Архив товаров</a>
+                </li>
+              </ul>
+            </div>
+            <div className={styles.services}>
+              <h2>Сервисы</h2>
+              <ul className={styles.servicesInfo}>
+                <li>
+                  <a href="#">Корзина</a>
+                </li>
+                <li>
+                  <a href="#">Авторизация</a>
+                </li>
+                <li>
+                  <a href="#">Восстановление аккаунта</a>
+                </li>
+                <li>
+                  <a href="#">Сброс пароля</a>
+                </li>
+                <li>
+                  <a href="#">Поиск на сайте</a>
+                </li>
+                <li>
+                  <a href="#">Карта сайта</a>
+                </li>
+              </ul>
+              <ul className={styles.servicesMenu}>
+                <li>
+                  <a href="#">
+                    <img src="/icons/vk.svg" alt="Вконтакте" />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="/icons/dzen.svg" alt="Dzen" />
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div className={styles.about}>
-            <h2>About Us</h2>
-            <ul className={styles.aboutMenu}>
-              <li>
-                <a href="#">Careers</a>
-              </li>
-              <li>
-                <a href="#">Our Stores</a>
-              </li>
-              <li>
-                <a href="#">Our Cares</a>
-              </li>
-              <li>
-                <a href="#">Terms & Conditions</a>
-              </li>
-              <li>
-                <a href="#">Privacy Policy</a>
-              </li>
-            </ul>
-          </div>
-          <div className={styles.customCare}>
-            <h2>Custom Care</h2>
-            <ul className={styles.customCareMenu}>
-              <li>
-                <a href="#">Help Center</a>
-              </li>
-              <li>
-                <a href="#">How to Buy</a>
-              </li>
-              <li>
-                <a href="#">Track Your Order</a>
-              </li>
-              <li>
-                <a href="#">Corporate & Bulk Purchasing</a>
-              </li>
-              <li>
-                <a href="#">Returns & Funds</a>
-              </li>
-            </ul>
-          </div>
-          <div className={styles.contacts}>
-            <h2>Custom Care</h2>
-            <ul className={styles.contactsInfo}>
-              <li><p>70 Washington Square South, New York, NY 10012, United States </p></li>
-              <li><p>Email: uilib.help@gmail.com</p></li>
-              <li><p>Phone: +1 1123 456 780</p></li>
-            </ul>
-            <ul className={styles.contactsMenu}>
-              <li>
-                <a href="#">
-                  <img src="/icons/vk.svg" alt="Вконтакте" />
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <img src="/icons/dzen.svg" alt="Dzen" />
-                </a>
-              </li>
-            </ul>
-          </div>
+        </div>
+      </div>
+      <div className={styles.footerBottom}>
+        <div className={styles.container}>
+          <p>
+            &copy; 2012-2023 МК ЭЛЕКТРО. Оптово-розничная сеть и
+            интернет-магазин электротехнической продукции с доставкой по РФ и
+            СНГ.
+          </p>
         </div>
       </div>
     </footer>

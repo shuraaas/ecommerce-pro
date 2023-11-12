@@ -2,28 +2,55 @@
 @import '../../scss/_media_breakpoints.scss';
 
 .container {
-  max-width: 1185px;
+  max-width: 1200px;
+  min-width: 320px;
   width: 100%;
-  padding: 12px;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 0 auto;
 }
 
 .footer {
-  background-color: #c30026;
+  // padding: 0 0 40px;
+  background-color: #de002b;
   color: #fff;
 }
 
 .row {
-  display: flex;
-  justify-content: space-between;
+  background-color: #4a4a4a;
+  padding: 40px 0 20px;
+
+  .rowInner {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .logo {
   max-width: 400px;
   display: flex;
   flex-direction: column;
-  gap: 20px 0;
+  gap: 50px;
+
+  .call {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: color 0.2s linear;
+
+      &:hover {
+        color: $color-primary;
+      }
+    }
+
+    span {
+      font-size: 20px;
+      font-weight: 500;
+    }
+  }
 
   img {
     max-width: 200px;
@@ -51,7 +78,7 @@
       transition: color 0.2s linear;
 
       &:hover {
-        color: #333;
+        color: $color-primary;
       }
     }
   }
@@ -74,13 +101,13 @@
       transition: color 0.2s linear;
 
       &:hover {
-        color: #333;
+        color: $color-primary;
       }
     }
   }
 }
 
-.contacts {
+.services {
   max-width: 300px;
 
   h2 {
@@ -88,10 +115,7 @@
     margin-bottom: 20px;
   }
 
-  .contactsInfo {
-    display: flex;
-    flex-direction: column;
-    gap: 10px 0;
+  .servicesInfo {
     list-style: none;
     margin: 0;
     margin-bottom: 20px;
@@ -107,12 +131,12 @@
       transition: color 0.2s linear;
 
       &:hover {
-        color: #333;
+        color: $color-primary;
       }
     }
   }
 
-  .contactsMenu {
+  .servicesMenu {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -138,6 +162,18 @@
       width: 16px;
       height: 16px;
     }
+  }
+}
+
+.footerBottom {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    margin: 0;
+    text-align: center;
   }
 }
 

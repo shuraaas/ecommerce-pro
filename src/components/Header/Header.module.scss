@@ -1,28 +1,29 @@
-@import '../../scss/_variables.scss';
-@import '../../scss/_media_breakpoints.scss';
+@import '../../scss/variables.scss';
+@import '../../scss/media_breakpoints.scss';
 
 .header {
   padding: 0 0 20px;
 }
 
 .secondary {
-  height: 40px;
-  display: flex;
-  align-items: center;
+  padding: 10px 0;
   background-color: $color-primary;
   color: #ffffff;
+  font-size: 14px;
+
+  .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .container {
-  max-width: 1185px;
+  max-width: 1200px;
+  min-width: 320px;
   width: 100%;
   margin: 0 auto;
-}
-
-.containerInner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  height: 100%;
 }
 
 .city {
@@ -39,42 +40,107 @@
   margin-right: 5px;
 }
 
-.phoneList {
+.contact {
   display: flex;
-  gap: 20px;
-}
+  align-items: center;
+  gap: 15px;
 
-.phone {
-  transition: color 0.2s linear;
+  .phoneNumbers {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 
-  &:hover {
-    color: #a1001f;
-    cursor: pointer;
+    .phoneList {
+      display: flex;
+      flex-direction: column;
+
+      .phone {
+        font-weight: 500;
+      }
+    }
+  }
+
+  .orderCall {
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 500;
+    padding: 0 10px;
+    height: 40px;
+    transition: .2s;
+
+    &:hover {
+      color: $color-primary;
+      background: #fff;
+      cursor: pointer;
+    }
+  }
+
+  .socials {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    .socialsIcon {
+      width: 35px;
+      height: 35px;
+      background: #fff;
+      border: 1px solid transparent;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: .2s;
+
+      a {
+        color: $color-primary;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      &:hover {
+        background: $color-primary;
+        border-color: #fff;
+        cursor: pointer;
+      }
+
+      &:hover,
+      &:hover a {
+        color: #fff;
+      }
+    }
   }
 }
 
 .headerMain {
   display: flex;
-  padding: 20px 0;
   justify-content: space-between;
   align-items: center;
+  gap: 30px;
+  padding: 40px 0;
   height: 50px;
 
   .headerTop {
-    display: flex;
-    align-items: center;
-    gap: 50px;
+    width: 300px;
+    // display: flex;
+    // align-items: center;
+    // gap: 50px;
   }
 
   .logo {
     display: block;
     max-width: 100%;
+    width: 100%;
     height: auto;
   }
 
   .search {
-    // width: 50%;
-    // display: flex;
+    flex: 1;
 
     .burgerMenu {
       display: none;
@@ -85,7 +151,7 @@
       justify-content: space-between;
 
       .input {
-        width: 150px;
+        flex: 1;
         padding: 10px;
         border: 1px solid #ccc;
         border-right-width: 0;
@@ -121,30 +187,18 @@
   .headerUser {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
 
-    .user {
-      width: 40px;
-      height: 40px;
+    .button {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      padding: 0;
       border: 0;
-      border-radius: 50%;
-      transition: background-color 0.2s linear;
-
-      &:hover {
-        cursor: pointer;
-      }
-
-      img {
-        width: 20px;
-        height: 20px;
-      }
-    }
-
-    .cart {
-      width: 40px;
-      height: 40px;
-      border: 0;
-      border-radius: 50%;
+      background: transparent;
+      font-size: 14px;
       transition: background-color 0.2s linear;
 
       &:hover {
@@ -163,29 +217,41 @@
   box-shadow: 0 16px 16px -16px rgba(43, 52, 69, 0.1);
   background-color: #ebebeb;
   border-radius: 5px;
-  padding: 5px 0;
+  height: 50px;
 
   .headerTooltipInner {
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 5px 0;
   }
 
   .categoryBtn {
+    font-size: 20px;
+    font-weight: 500;
     display: flex;
     align-items: center;
     gap: 10px;
     border: 0;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 0 16px;
     width: 30%;
     height: 100%;
+    background: $color-primary;
+    color: #fff;
     transition: background-color 0.2s linear;
 
     &:hover {
       cursor: pointer;
-      background-color: #d2d2d2;
+      background-color: #c60026;
+    }
+
+    svg {
+      fill: #fff;
+    }
+
+    p {
+      margin: 0;
     }
   }
 }
@@ -195,17 +261,18 @@
   padding: 0;
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 15px;
+  color: #fff;
+  font-weight: 500;
 
   .navbarLink {
-    color: #333;
+    color: inherit;
     text-decoration: none;
     padding: 10px 0;
     transition: color 0.2s linear;
 
     &:hover {
-      color: $color-primary;
-      border-bottom: 2px solid $color-primary;
+      color: #333;
     }
   }
 }

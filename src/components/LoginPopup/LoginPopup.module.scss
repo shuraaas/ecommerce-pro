@@ -14,9 +14,11 @@
 }
 
 .popup {
+  width: 100%;
+  max-width: 300px;
   background: #fff;
   border-radius: 20px;
-  padding: 20px;
+  padding: 30px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -49,5 +51,6 @@
     border-radius: 10px;
     width: 100%;
     max-width: 250px;
+    padding: 20px;
   }
 }

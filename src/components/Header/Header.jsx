@@ -1,16 +1,76 @@
 import styles from './Header.module.scss';
 import { Link } from 'react-router-dom';
+import {
+  MdFavorite,
+  MdShoppingCart,
+  MdBalance,
+  MdAccountCircle,
+  MdLocalPhone,
+} from 'react-icons/md';
+import { PiYoutubeLogoLight } from 'react-icons/pi';
+import { SlSocialVkontakte } from 'react-icons/sl';
+import { CiMail } from 'react-icons/ci';
 
 const Header = ({ onClick, onBurgerMenuClick }) => {
   return (
     <header className={styles.header}>
       <div className={styles.secondary}>
         <div className={styles.container}>
-          <div className={styles.containerInner}>
+          <div className={styles.inner}>
             <span className={styles.city}>Челябинск</span>
-            <div className={styles.phoneList}>
-              <span className={styles.phone}>8 800 100-54-41</span>
-              <span className={styles.phone}>8 984 707-97-98</span>
+            <ul className={styles.navbar}>
+              <li>
+                <a className={styles.navbarLink} href="#">
+                  Акции
+                </a>
+              </li>
+              <li>
+                <a className={styles.navbarLink} href="#">
+                  О компании
+                </a>
+              </li>
+              <li>
+                <a className={styles.navbarLink} href="#">
+                  Доставка
+                </a>
+              </li>
+              <li>
+                <a className={styles.navbarLink} href="#">
+                  Контакты
+                </a>
+              </li>
+              <li>
+                <a className={styles.navbarLink} href="#">
+                  Отследить заказ
+                </a>
+              </li>
+            </ul>
+            <div className={styles.contact}>
+              <div className={styles.phoneNumbers}>
+                <MdLocalPhone size={30} />
+                <div className={styles.phoneList}>
+                  <span className={styles.phone}>8 800 100-54-41</span>
+                  <span className={styles.phone}>8 984 707-97-98</span>
+                </div>
+              </div>
+              <button className={styles.orderCall}>Заказать звонок</button>
+              <ul className={styles.socials}>
+                <li className={styles.socialsIcon}>
+                  <a href="#">
+                    <CiMail size={25} />
+                  </a>
+                </li>
+                <li className={styles.socialsIcon}>
+                  <a href="#">
+                    <PiYoutubeLogoLight size={25} />
+                  </a>
+                </li>
+                <li className={styles.socialsIcon}>
+                  <a href="#">
+                    <SlSocialVkontakte size={25} />
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -26,21 +86,10 @@ const Header = ({ onClick, onBurgerMenuClick }) => {
                 alt="Мк электро"
               />
             </Link>
-            <div className={styles.headerUser}>
-              <button onClick={onClick} className={styles.user}>
-                <img src="/icons/user.svg" alt="Кнопка Аккаунт" />
-              </button>
-              <button className={styles.cart}>
-                <img src="/icons/cart.svg" alt="Кнопка Корзина" />
-              </button>
-            </div>
           </div>
 
           <div className={styles.search}>
-            <button
-              className={styles.burgerMenu}
-              onClick={onBurgerMenuClick}
-            ></button>
+            <button className={styles.burgerMenu} onClick={onBurgerMenuClick} />
             <div className={styles.inputSearch}>
               <input
                 className={styles.input}
@@ -51,6 +100,25 @@ const Header = ({ onClick, onBurgerMenuClick }) => {
                 <img src="/icons/search.svg" alt="Иконка поиска" />
               </button>
             </div>
+          </div>
+
+          <div className={styles.headerUser}>
+            <button className={styles.button}>
+              <MdBalance size={25} color="red" />
+              <span>Сравнение</span>
+            </button>
+            <button className={styles.button}>
+              <MdFavorite size={25} color="red" />
+              <span>Избранное</span>
+            </button>
+            <button onClick={onClick} className={styles.button}>
+              <MdAccountCircle size={25} color="red" />
+              <span>Войти</span>
+            </button>
+            <button className={styles.button}>
+              <MdShoppingCart size={25} color="red" />
+              <span>Корзина</span>
+            </button>
           </div>
         </div>
       </div>
@@ -71,38 +139,6 @@ const Header = ({ onClick, onBurgerMenuClick }) => {
               </svg>
               <p>Категории</p>
             </button>
-            <ul className={styles.navbar}>
-              <li>
-                <a className={styles.navbarLink} href="#">
-                  Главная
-                </a>
-              </li>
-              <li>
-                <a className={styles.navbarLink} href="#">
-                  Страницы
-                </a>
-              </li>
-              <li>
-                <a className={styles.navbarLink} href="#">
-                  Аккаунт
-                </a>
-              </li>
-              <li>
-                <a className={styles.navbarLink} href="#">
-                  Отследить заказ
-                </a>
-              </li>
-              <li>
-                <a className={styles.navbarLink} href="#">
-                  Доставка
-                </a>
-              </li>
-              <li>
-                <a className={styles.navbarLink} href="#">
-                  Контакты
-                </a>
-              </li>
-            </ul>
           </div>
         </div>
       </div>

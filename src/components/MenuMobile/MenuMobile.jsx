@@ -59,7 +59,6 @@ const MenuMobile = ({isOpen, onClose}) => {
 
   return (
     <>
-      {/* <button onClick={() => setIsOpend(true)}>Open menu</button> */}
       <nav className={styles.menu} role="navigation">
         <div
           className={cn(styles.cover, {
