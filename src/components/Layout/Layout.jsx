@@ -26,14 +26,14 @@ const Layout = () => {
     <div className={styles.page}>
       <Header onClick={handleClick} onBurgerMenuClick={handleOpenBurgerMenu} />
       <main>
-        <Home />
+        {/* <Home />
         <Brands />
         <ProductsList />
         <News />
         <Subscription />
-        <Trust />
+        <Trust /> */}
       </main>
-      <Footer />
+      {/* <Footer /> */}
 
       <BottomNav />
       <LoginPopup isOpen={isOpen} onClose={handleClose} title="Вход" />

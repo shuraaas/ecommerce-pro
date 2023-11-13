@@ -1,6 +1,10 @@
 @import 'normalize.css';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;600&display=swap');
 
+* {
+  box-sizing: border-box;
+}
+
 :root {
   font-family: Montserrat, Arial, sans-serif;
   line-height: 1.5;

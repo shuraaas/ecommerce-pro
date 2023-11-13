@@ -1,6 +1,14 @@
 @import '../../scss/variables.scss';
 @import '../../scss/media_breakpoints.scss';
 
+.container {
+  max-width: 1200px;
+  min-width: 320px;
+  width: 100%;
+  margin: 0 auto;
+  height: 100%;
+}
+
 .header {
   padding: 0 0 20px;
 }
@@ -16,14 +24,6 @@
     justify-content: space-between;
     align-items: center;
   }
-}
-
-.container {
-  max-width: 1200px;
-  min-width: 320px;
-  width: 100%;
-  margin: 0 auto;
-  height: 100%;
 }
 
 .city {
@@ -68,7 +68,7 @@
     font-weight: 500;
     padding: 0 10px;
     height: 40px;
-    transition: .2s;
+    transition: 0.2s;
 
     &:hover {
       color: $color-primary;
@@ -94,7 +94,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: .2s;
+      transition: 0.2s;
 
       a {
         color: $color-primary;
@@ -127,9 +127,6 @@
 
   .headerTop {
     width: 300px;
-    // display: flex;
-    // align-items: center;
-    // gap: 50px;
   }
 
   .logo {
@@ -279,7 +276,9 @@
 
 @include mobile {
   .container {
-    max-width: calc(375px - 24px);
+    // box-sizing: border-box;
+    width: 100%;
+    padding: 0 15px;
   }
 
   .secondary {
@@ -291,57 +290,41 @@
   }
 
   .headerMain {
-    gap: 20px;
-    flex-direction: column;
-    padding: 0 0 40px;
-    padding-top: 20px;
+    // gap: 20px;
+    // flex-direction: column;
+    // padding: 0 0 40px;
+    // padding-top: 20px;
+    padding: 0;
 
     .headerTop {
       width: 100%;
+      display: flex;
       justify-content: space-between;
+      align-items: center;
 
       .logo {
         width: 100px;
       }
 
-      .headerUser {
-        .user,
-        .cart {
-          width: 30px;
-          height: 30px;
-
-          img {
-            width: 15px;
-            height: 15px;
-          }
-        }
-      }
-    }
-
-    .search {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      gap: 5px;
-
-      .burgerMenu {
+      .burgerMenu,
+      .burgerSearch {
         display: block;
         border: 0;
-        border-radius: 10px;
-        width: 41px;
-        height: auto;
-        background: url('/icons/menu.svg') no-repeat center / cover;
-        background-color: #ebebeb;
-        background-size: 30px;
+        padding: 0;
+        background: none;
 
         &:hover {
           cursor: pointer;
         }
       }
+    }
 
-      .input {
-        border-width: 1px;
-      }
+    .headerUser {
+      display: none;
+    }
+
+    .search {
+      display: none;
     }
   }
 

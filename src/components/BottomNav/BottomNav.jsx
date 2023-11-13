@@ -1,6 +1,9 @@
 import { useHref } from 'react-router-dom';
 import styles from './BottomNav.module.scss';
 import cn from 'classnames';
+import { AiOutlineHome, AiOutlineShoppingCart, AiOutlineUser } from 'react-icons/ai';
+import { RiMenuSearchLine } from 'react-icons/ri';
+import { BsBookmark } from 'react-icons/bs';
 
 const BottomNav = () => {
   const href = useHref();
@@ -14,62 +17,32 @@ const BottomNav = () => {
               className={cn(styles.navLink, href == '/' ? styles.active : '')}
               href="#"
             >
-              <svg
-                className={styles.navIcon}
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 16 16"
-                width="20"
-                height="20"
-                fill="none"
-              >
-                <path d="M13.85 7.6 13 6.77 8.35 2.15a.48.48 0 0 0-.7 0L3 6.72l-.83.82a.5.5 0 1 0 .7.71v5.2a.5.5 0 0 0 .5.5h9.29a.5.5 0 0 0 .5-.5V8.3a.52.52 0 0 0 .35.14.51.51 0 0 0 .36-.15.49.49 0 0 0-.02-.69ZM6.38 13V8.92h3V13Zm5.76 0H10.4V8.42a.51.51 0 0 0-.5-.5h-4a.51.51 0 0 0-.5.5V13H3.85V7.31L8 3.2l4.14 4.11Z"></path>
-              </svg>
+              <AiOutlineHome size={20} />
               <span>Главная</span>
             </a>
           </li>
           <li className={styles.navItem}>
             <a className={styles.navLink} href="#">
-              <svg
-                className={styles.navIcon}
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 64 64"
-                width="20"
-                height="20"
-                fill="none"
-              >
-                <path d="M36.54 38h-9.08a1.5 1.5 0 0 1-1.5-1.5v-9.04a1.5 1.5 0 0 1 1.5-1.5h9.08a1.5 1.5 0 0 1 1.5 1.5v9.08a1.5 1.5 0 0 1-1.5 1.46zM29 35h6v-6h-6zm23.21 3h-9.08a1.5 1.5 0 0 1-1.5-1.5v-9.04a1.5 1.5 0 0 1 1.5-1.5h9.08a1.5 1.5 0 0 1 1.5 1.5v9.08a1.5 1.5 0 0 1-1.5 1.46zm-7.58-3h6.08v-6h-6.08zm-23.76 3h-9.08a1.5 1.5 0 0 1-1.5-1.5v-9.04a1.5 1.5 0 0 1 1.5-1.5h9.08a1.5 1.5 0 0 1 1.5 1.5v9.08a1.5 1.5 0 0 1-1.5 1.46zm-7.58-3h6.08v-6h-6.08zm23.25-12.94h-9.08a1.5 1.5 0 0 1-1.5-1.5v-9.09a1.5 1.5 0 0 1 1.5-1.5h9.08a1.5 1.5 0 0 1 1.5 1.5v9.09a1.5 1.5 0 0 1-1.5 1.5zm-7.58-3H35V13h-6zm23.25 3h-9.08a1.5 1.5 0 0 1-1.5-1.5v-9.09a1.5 1.5 0 0 1 1.5-1.5h9.08a1.5 1.5 0 0 1 1.5 1.5v9.09a1.5 1.5 0 0 1-1.5 1.5zm-7.58-3h6.08V13h-6.08zm-23.76 3h-9.08a1.5 1.5 0 0 1-1.5-1.5v-9.09a1.5 1.5 0 0 1 1.5-1.5h9.08a1.5 1.5 0 0 1 1.5 1.5v9.09a1.5 1.5 0 0 1-1.5 1.5zm-7.58-3h6.08V13h-6.08zM36.54 54h-9.08a1.5 1.5 0 0 1-1.5-1.5v-9.06a1.5 1.5 0 0 1 1.5-1.5h9.08a1.5 1.5 0 0 1 1.5 1.5v9.09a1.5 1.5 0 0 1-1.5 1.47zM29 51h6v-6.06h-6zm23.21 3h-9.08a1.5 1.5 0 0 1-1.5-1.5v-9.06a1.5 1.5 0 0 1 1.5-1.5h9.08a1.5 1.5 0 0 1 1.5 1.5v9.09a1.5 1.5 0 0 1-1.5 1.47zm-7.58-3h6.08v-6.06h-6.08zm-23.76 3h-9.08a1.5 1.5 0 0 1-1.5-1.5v-9.06a1.5 1.5 0 0 1 1.5-1.5h9.08a1.5 1.5 0 0 1 1.5 1.5v9.09a1.5 1.5 0 0 1-1.5 1.47zm-7.58-3h6.08v-6.06h-6.08z"></path>
-              </svg>
-              <span>Категории</span>
+              <RiMenuSearchLine size={20} />
+              <span>Каталог</span>
             </a>
           </li>
           <li className={styles.navItem}>
             <a className={styles.navLink} href="#">
-              <svg
-                className={styles.navIcon}
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 101 101"
-                width="20"
-                height="20"
-                fill="none"
-              >
-                <path d="M84.1 28.5c-.5-.6-1.2-.9-1.9-.9h-61v-8.8c0-1.3-1.1-2.4-2.4-2.4-1.3 0-2.4 1.1-2.4 2.4v50c0 1.3 1.1 2.4 2.4 2.4h2.8c-1.9 3.5-1.5 7.9 1.5 10.9 1.7 1.7 4 2.7 6.4 2.7s4.7-.9 6.4-2.7c1.7-1.7 2.7-4 2.7-6.4 0-1.6-.4-3.1-1.2-4.4h11.3c-1.9 3.5-1.5 7.9 1.5 10.9 1.7 1.7 4 2.7 6.4 2.7 2.4 0 4.7-.9 6.4-2.7 1.7-1.7 2.7-4 2.7-6.4 0-1.6-.4-3.1-1.2-4.4h3.1c1.3 0 2.4-1.1 2.4-2.4 0-1.3-1.1-2.4-2.4-2.4H21.2v-4.7h53c1.1 0 2-.7 2.3-1.8l8-29.3c.2-1 0-1.7-.4-2.3zM32.6 78.6c-1.6 1.6-4.5 1.6-6.1 0-1.7-1.7-1.7-4.4 0-6.1.8-.8 1.9-1.3 3.1-1.3 1.2 0 2.2.4 3.1 1.3.8.8 1.3 1.9 1.3 3.1s-.5 2.2-1.4 3zm27.2 0c-1.6 1.6-4.5 1.6-6.1 0-1.7-1.7-1.7-4.4 0-6.1.8-.8 1.9-1.3 3.1-1.3 1.2 0 2.2.4 3.1 1.3.8.8 1.3 1.9 1.3 3.1s-.5 2.2-1.4 3zm12.5-21.8H21.2V32.3H79l-6.7 24.5z"></path>
-              </svg>
+              <AiOutlineShoppingCart size={20} />
               <span>Корзина</span>
             </a>
           </li>
           <li className={styles.navItem}>
             <a className={styles.navLink} href="#">
-              <svg
-                className={styles.navIcon}
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 101 101"
-                width="20"
-                height="20"
-                fill="none"
-              >
-                <path d="M50.4 54.5c10.1 0 18.2-8.2 18.2-18.2S60.5 18 50.4 18s-18.2 8.2-18.2 18.2 8.1 18.3 18.2 18.3zm0-31.7c7.4 0 13.4 6 13.4 13.4s-6 13.4-13.4 13.4S37 43.7 37 36.3s6-13.5 13.4-13.5zM18.8 83h63.4c1.3 0 2.4-1.1 2.4-2.4 0-12.6-10.3-22.9-22.9-22.9H39.3c-12.6 0-22.9 10.3-22.9 22.9 0 1.3 1.1 2.4 2.4 2.4zm20.5-20.5h22.4c9.2 0 16.7 6.8 17.9 15.7H21.4c1.2-8.9 8.7-15.7 17.9-15.7z"></path>
-              </svg>
-              <span>Профиль</span>
+              <BsBookmark size={18} />
+              <span>Избранное</span>
+            </a>
+          </li>
+          <li className={styles.navItem}>
+            <a className={styles.navLink} href="#">
+              <AiOutlineUser size={20} />
+              <span>Войти</span>
             </a>
           </li>
         </ul>
