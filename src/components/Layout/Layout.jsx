@@ -26,8 +26,8 @@ const Layout = () => {
     <div className={styles.page}>
       <Header onClick={handleClick} onBurgerMenuClick={handleOpenBurgerMenu} />
       <main>
-        {/* <Home />
-        <Brands />
+        <Home />
+        {/* <Brands />
         <ProductsList />
         <News />
         <Subscription />

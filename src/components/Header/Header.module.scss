@@ -276,9 +276,12 @@
 
 @include mobile {
   .container {
-    // box-sizing: border-box;
     width: 100%;
     padding: 0 15px;
+  }
+
+  .header {
+    padding: 10px 0;
   }
 
   .secondary {
@@ -290,10 +293,6 @@
   }
 
   .headerMain {
-    // gap: 20px;
-    // flex-direction: column;
-    // padding: 0 0 40px;
-    // padding-top: 20px;
     padding: 0;
 
     .headerTop {
@@ -303,7 +302,7 @@
       align-items: center;
 
       .logo {
-        width: 100px;
+        width: 150px;
       }
 
       .burgerMenu,
