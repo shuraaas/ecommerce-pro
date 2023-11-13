@@ -6,11 +6,12 @@ import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
 import 'swiper/scss/autoplay';
 
-const Slider = ({ slides }) => {
+const Slider = ({ slides, className }) => {
   return (
     <Swiper
       modules={[Navigation, Pagination, Autoplay, A11y]}
       slidesPerView={1}
+      className={className}
       // navigation
       loop
       // autoHeight

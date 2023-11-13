@@ -19,8 +19,13 @@ const Home = () => {
               ))}
             </ul>
           </nav>
-          <div className={styles.homeSlider}>
-            <Slider className={styles.homeSlider} slides={slides} />
+          <div className={styles.rightBlock}>
+            <div className={styles.bestCategories}>
+              <a className={styles.categoriesItem} href="#">Распродажа</a>
+              <a className={styles.categoriesItem} href="#">Акции</a>
+              <a className={styles.categoriesItem} href="#">Популярные товары</a>
+            </div>
+            <Slider className={styles.slider} slides={slides} />
           </div>
         </div>
       </div>
