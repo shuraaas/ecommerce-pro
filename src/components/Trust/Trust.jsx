@@ -18,12 +18,12 @@ const Trust = () => {
                 modules={[Navigation, Pagination, Autoplay, A11y]}
                 slidesPerView={5}
                 spaceBetween={20}
-                navigation
+                // navigation
                 loop
                 autoHeight
                 // autoplay
                 speed={1000}
-                pagination={{ clickable: true }}
+                // pagination={{ clickable: true }}
               >
                 <SwiperSlide>
                   <li className={styles.card}>

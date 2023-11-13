@@ -1,4 +1,5 @@
 @import '../../scss/_variables.scss';
+@import '../../scss/_media_breakpoints.scss';
 
 .productsCard {
   max-width: 300px;
@@ -98,6 +99,30 @@
       position: absolute;
       top: 28px;
       right: 8px;
+    }
+  }
+}
+
+@include mobile {
+  .info {
+    padding: 10px;
+
+    .cardInfo {
+      .infoHeader {
+        margin-bottom: 10px;
+      }
+
+      .inStock {
+        font-size: 10px;
+        font-weight: 400;
+        color: #969696;
+      }
+    }
+
+    .btn {
+      width: 15px;
+      height: 15px;
+      font-size: 15px;
     }
   }
 }

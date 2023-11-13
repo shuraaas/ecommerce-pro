@@ -1,4 +1,5 @@
-@import '../../scss/variables';
+@import '../../scss/_variables.scss';
+@import '../../scss/_media_breakpoints.scss';
 
 .container {
   max-width: 1200px;
@@ -17,7 +18,7 @@
 }
 
 .cardsBlock {
-  margin-bottom: 20px;
+  // margin-bottom: 20px;
 
   .cardsList {
     list-style: none;
@@ -33,6 +34,23 @@
       display: block;
       width: 100%;
       height: auto;
+    }
+  }
+}
+
+@include mobile {
+  .container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  .brands {
+    padding: 20px 0;
+
+    .title {
+      margin-left: 0;
+      font-size: 20px;
     }
   }
 }

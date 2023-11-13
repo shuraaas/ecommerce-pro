@@ -27,13 +27,13 @@ const Layout = () => {
       <Header onClick={handleClick} onBurgerMenuClick={handleOpenBurgerMenu} />
       <main>
         <Home />
-        {/* <Brands />
+        <Brands />
         <ProductsList />
         <News />
         <Subscription />
-        <Trust /> */}
+        <Trust />
       </main>
-      {/* <Footer /> */}
+      <Footer />
 
       <BottomNav />
       <LoginPopup isOpen={isOpen} onClose={handleClose} title="Вход" />

@@ -17,13 +17,13 @@ const News = () => {
               <Swiper
                 modules={[Navigation, Pagination, Autoplay, A11y]}
                 slidesPerView={3}
-                spaceBetween={30}
-                navigation
+                spaceBetween={20}
+                // navigation
                 loop
                 autoHeight
                 // autoplay
                 speed={1000}
-                pagination={{ clickable: true }}
+                // pagination={{ clickable: true }}
               >
                 <SwiperSlide>
                   <li className={styles.card}>

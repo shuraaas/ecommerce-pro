@@ -16,8 +16,8 @@ const Brands = () => {
               <Swiper
                 modules={[Navigation, Autoplay, A11y]}
                 slidesPerView={6}
-                spaceBetween={30}
-                navigation
+                spaceBetween={20}
+                // navigation
                 loop
                 autoHeight
                 // autoplay

@@ -179,20 +179,39 @@
 
 @include mobile {
   .container {
-    max-width: calc(375px - 24px);
+    padding: 0 15px;
   }
 
   .footer {
-    transform: translatey(-50px);
+    padding-bottom: 60px;
     font-size: 14px;
   }
 
   .row {
     flex-wrap: wrap;
+    padding-top: 20px;
+
+    .rowInner {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .logo {
+      align-items: center;
+      gap: 20px;
+    }
   }
 
   .about,
-  .customCare {
-    display: none;
+  .customCare,
+  .services {
+    h2 {
+      margin-bottom: 10px;
+    }
+  }
+
+  .footerBottom {
+    height: unset;
+    padding: 5px 0;
   }
 }

@@ -1,4 +1,5 @@
 @import '../../scss/variables.scss';
+@import '../../scss/_media_breakpoints.scss';
 
 .container {
   max-width: 1200px;
@@ -58,6 +59,26 @@
       &:hover {
         background-color: #bf0025;
         cursor: pointer;
+      }
+    }
+  }
+}
+
+@include mobile {
+  .container {
+    padding: 0 15px;
+  }
+
+  .subscription {
+    padding: 20px 0;
+
+    .inner {
+      padding: 0;
+      flex-direction: column;
+
+      .text {
+        font-size: 16px;
+        text-align: center;
       }
     }
   }
