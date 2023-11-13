@@ -123,10 +123,15 @@
   align-items: center;
   gap: 30px;
   padding: 40px 0;
-  height: 50px;
+  height: 100%;
 
   .headerTop {
     width: 300px;
+
+    .burgerMenu,
+    .burgerSearch {
+      display: none;
+    }
   }
 
   .logo {
@@ -138,10 +143,6 @@
 
   .search {
     flex: 1;
-
-    .burgerMenu {
-      display: none;
-    }
 
     .inputSearch {
       display: flex;
@@ -232,7 +233,8 @@
     border: 0;
     border-radius: 10px;
     padding: 0 16px;
-    width: 30%;
+    width: 100%;
+    max-width: 340px;
     height: 100%;
     background: $color-primary;
     color: #fff;
