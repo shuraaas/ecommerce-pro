@@ -35,7 +35,7 @@ const BottomNav = () => {
           </li>
           <li className={styles.navItem}>
             <a className={styles.navLink} href="#">
-              <BsBookmark size={18} />
+              <BsBookmark size={20} />
               <span>Избранное</span>
             </a>
           </li>

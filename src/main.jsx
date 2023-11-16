@@ -13,3 +13,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   </>,
   // {/* </React.StrictMode>, */}
 );
+
+// TODO: сделать липкую шапку
+// TODO: сделать модалку для католога

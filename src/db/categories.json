@@ -1,0 +1,26 @@
+[
+  {
+      "id": 4,
+      "title": "Legrand",
+      "slug": "legrand",
+      "subcategories": 3
+  },
+  {
+      "id": 2,
+      "title": "Кабель и провода",
+      "slug": "kabel-i-provoda",
+      "subcategories": null
+  },
+  {
+      "id": 1,
+      "title": "Розетки и выключитали",
+      "slug": "rozetki-i-vyklyuchitali",
+      "subcategories": null
+  },
+  {
+      "id": 3,
+      "title": "Свет",
+      "slug": "svet",
+      "subcategories": null
+  }
+]
