@@ -43,7 +43,7 @@ const IconsGenerator = ({ name }) => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <g clip-path="url(#clip0_142_39)">
+          <g clipPath="url(#clip0_142_39)">
             <rect width="26" height="26" fill="white" />
             <circle
               cx="13.0778"
