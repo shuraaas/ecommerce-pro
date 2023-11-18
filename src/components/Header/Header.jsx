@@ -18,6 +18,8 @@ import SearchMobile from '../SearchMobile';
 const Header = ({ onClick, onBurgerMenuClick }) => {
   const [isOpenSearch, setIsOpenSearch] = useState(false);
 
+  const popularTags = ['сетевой фильтр', 'умная лампочка', 'розетка', 'отвертка'];
+
   return (
     <>
       <header className={styles.header}>
@@ -92,7 +94,7 @@ const Header = ({ onClick, onBurgerMenuClick }) => {
               <Link className={styles.link} to="/">
                 <img
                   className={styles.logo}
-                  src="/logo/main-logo.png"
+                  src="/logo/logo.svg"
                   alt="Мк электро"
                 />
               </Link>
@@ -114,6 +116,14 @@ const Header = ({ onClick, onBurgerMenuClick }) => {
                 <button className={styles.btnSearch}>
                   <img src="/icons/search.svg" alt="Иконка поиска" />
                 </button>
+              </div>
+              <div className={styles.tagsBar}>
+                <span>Popular: </span>
+                <ul className={styles.tags}>
+                  {popularTags.map((item, index) => (
+                    <li className={styles.tagsItem}></li>
+                  ))}
+                </ul>
               </div>
             </div>
 

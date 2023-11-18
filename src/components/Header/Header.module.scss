@@ -19,7 +19,8 @@
   padding: 10px 0;
   background-color: $color-primary;
   color: #ffffff;
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: 700;
 
   .inner {
     display: flex;
@@ -145,6 +146,7 @@
 
   .search {
     flex: 1;
+    position: relative;
 
     .inputSearch {
       display: flex;
@@ -181,6 +183,14 @@
           cursor: pointer;
         }
       }
+    }
+
+    .tagsBar {
+      position: absolute;
+      top: 45px;
+      left: 0;
+      width: 100%;
+      background: red;
     }
   }
 
