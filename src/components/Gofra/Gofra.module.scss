@@ -28,36 +28,96 @@
       height: auto;
     }
 
-    .info {
+    .product {
       flex: 1;
       padding: 40px;
       background-color: #eaeaea;
       border-radius: 20px;
       position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
 
-      p {
-        margin: 10px 0;
+      .productInfo {
+        p {
+          margin: 10px 0;
+        }
+
+        span {
+          font-weight: 500;
+        }
       }
 
-      span {
-        font-weight: 500;
-      }
+      .productOrder {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 20px;
 
-      button {
-        border: none;
-        position: absolute;
-        right: 30px;
-        bottom: 30px;
-        padding: 20px 40px;
-        background-color: #de002b;
-        border-radius: 20px;
-        cursor: pointer;
-        font-size: 20px;
-        font-weight: 500;
-        transition: 0.2s ease;
+        .buy {
+          border: none;
+          padding: 20px 40px;
+          background-color: #de002b;
+          border-radius: 20px;
+          cursor: pointer;
+          font-size: 20px;
+          font-weight: 500;
+          transition: 0.2s ease;
 
-        &:hover {
-          background-color: #c80027;
+          &:hover {
+            background-color: #c80027;
+          }
+        }
+
+        .orderInfo {
+          P {
+            font-weight: 500;
+            margin: 0;
+          }
+
+          span {
+            padding-left: 20px;
+            text-align: right;
+          }
+        }
+
+        form {
+          display: flex;
+          flex-direction: column;
+          align-self: flex-end;
+          gap: 5px;
+
+          div {
+            display: flex;
+            justify-content: space-between;
+            gap: 5px;
+            width: 100%;
+
+            input {
+              height: 40px;
+              width: 60px;
+              outline: none;
+              border: 1px solid #ccc;
+              border-radius: 10px;
+              padding: 10px;
+
+              &:focus {
+                border-color: red;
+              }
+            }
+
+            button {
+              background-color: #de002b;
+              border: none;
+              width: 40px;
+              border-radius: 10px;
+              cursor: pointer;
+              transition: background-color .2s ease;
+
+              &:hover {
+                background-color: #b90024;
+              }
+            }
+          }
         }
       }
     }
@@ -91,7 +151,7 @@
         width: 100%;
       }
 
-      .info {
+      .product {
         min-height: 400px;
         padding: 20px;
       }
