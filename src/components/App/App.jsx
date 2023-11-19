@@ -16,15 +16,26 @@ import Gofra from '../Gofra';
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenBurgerMenu, setIsOpenBurgerMenu] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false);
   const navigate = useNavigate();
 
   const handleProfileClick = () => {
-    navigate('/user');
+    if (loggedIn) {
+      navigate('/user');
+    } else {
+      setIsOpen(true);
+    }
   };
 
   const handleLogin = () => {
+    setLoggedIn(true);
     navigate('/user');
     setIsOpen(false);
+  };
+
+  const handleLogout = () => {
+    setLoggedIn(false);
+    navigate('/');
   };
 
   return (
@@ -34,20 +45,21 @@ const App = () => {
           path="/"
           element={
             <Layout
-              handleClick={() => setIsOpen(true)}
+              handleClick={handleProfileClick}
               handleOpenBurgerMenu={() => setIsOpenBurgerMenu(true)}
+              loggedIn={loggedIn}
             />
           }
         >
           <Route index element={<Home />} />
           <Route path="products/gofra" element={<Gofra />} />
           <Route path="register" element={<Register />} />
-          <Route path="user" element={<Profile />} />
+          <Route path="user" element={<Profile onLogout={handleLogout} />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
 
-      <BottomNav isOpen={() => setIsOpen(true)} />
+      <BottomNav isOpen={handleProfileClick} />
       <LoginPopup
         isOpen={isOpen}
         onClose={() => setIsOpen(false)}

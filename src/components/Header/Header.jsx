@@ -16,9 +16,9 @@ import { RxHamburgerMenu } from 'react-icons/rx';
 import { BiSearch } from 'react-icons/bi';
 import SearchMobile from '../SearchMobile';
 
-const Header = ({ handleClick, handleOpenBurgerMenu }) => {
+const Header = ({ handleClick, handleOpenBurgerMenu, loggedIn }) => {
   const [isOpenSearch, setIsOpenSearch] = useState(false);
-  const [isOpenTagsBar, setIsOpenTagsBar] = useState(false)
+  const [isOpenTagsBar, setIsOpenTagsBar] = useState(false);
 
   const popularTags = [
     'tag',
@@ -103,7 +103,10 @@ const Header = ({ handleClick, handleOpenBurgerMenu }) => {
         <div className={styles.container}>
           <div className={styles.headerMain}>
             <div className={styles.headerTop}>
-              <button className={styles.burgerMenu} onClick={handleOpenBurgerMenu}>
+              <button
+                className={styles.burgerMenu}
+                onClick={handleOpenBurgerMenu}
+              >
                 <RxHamburgerMenu size={24} />
               </button>
               <Link className={styles.link} to="/">
@@ -133,7 +136,11 @@ const Header = ({ handleClick, handleOpenBurgerMenu }) => {
                   <img src="/icons/search.svg" alt="Иконка поиска" />
                 </button>
               </div>
-              <div className={cn(styles.tagsBar, {[styles.active]: isOpenTagsBar})}>
+              <div
+                className={cn(styles.tagsBar, {
+                  [styles.active]: isOpenTagsBar,
+                })}
+              >
                 <span>Popular: </span>
                 <ul className={styles.tags}>
                   {popularTags.map((item, index) => (
@@ -154,13 +161,13 @@ const Header = ({ handleClick, handleOpenBurgerMenu }) => {
                 <MdFavorite size={25} color="red" />
                 <span>Избранное</span>
               </button>
-              <button onClick={handleClick} className={styles.button}>
-                <MdAccountCircle size={25} color="red" />
-                <span>Войти</span>
-              </button>
               <button className={styles.button}>
                 <MdShoppingCart size={25} color="red" />
                 <span>Корзина</span>
+              </button>
+              <button onClick={handleClick} className={styles.button}>
+                <MdAccountCircle size={25} color="red" />
+                {loggedIn ? <span>Профиль</span> : <span>Войти</span>}
               </button>
             </div>
           </div>
