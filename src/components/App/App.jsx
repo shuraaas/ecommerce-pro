@@ -13,10 +13,9 @@ const App = () => {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route path="register" element={<Register />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Route>
+        <Route path="/" element={<Layout />} />
+        <Route path="register" element={<Register />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </>
   );
