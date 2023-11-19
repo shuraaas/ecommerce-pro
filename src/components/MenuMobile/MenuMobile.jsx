@@ -2,6 +2,7 @@ import styles from './MenuMobile.module.scss';
 import cn from 'classnames';
 import { useState } from 'react';
 import IconsGenerator from '../IconsGenerator';
+import { Link } from 'react-router-dom';
 
 const menu = [
   {
@@ -219,9 +220,9 @@ const MenuMobile = ({ isOpen, onClose }) => {
                     {m.link && (
                       <>
                         <IconsGenerator name={m.name} />
-                        <a className={styles.item} href={m.link}>
+                        <Link className={styles.item} to={m.link} onClick={onClose}>
                           {m.name}
-                        </a>
+                        </Link>
                       </>
                     )}
                   </div>
