@@ -1,7 +1,7 @@
-import styles from './Home.module.scss';
+import styles from './Main.module.scss';
 import { data } from '../../db/categories.js';
-import Slider from '../Slider';
-import slides from '../../db/slides.json';
+// import Slider from '../Slider';
+// import slides from '../../db/slides.json';
 import IconsGenerator from '../IconsGenerator';
 import { Navigation, Pagination, A11y, Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -10,11 +10,11 @@ import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
 import 'swiper/scss/autoplay';
 
-const Home = () => {
+const Main = () => {
   return (
-    <section className={styles.home}>
+    <section className={styles.main}>
       <div className={styles.container}>
-        <div className={styles.homeInner}>
+        <div className={styles.mainInner}>
           <nav className={styles.menu}>
             <ul className={styles.menuInner}>
               {data.map(item => (
@@ -84,4 +84,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Main;

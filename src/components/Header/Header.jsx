@@ -16,7 +16,7 @@ import { RxHamburgerMenu } from 'react-icons/rx';
 import { BiSearch } from 'react-icons/bi';
 import SearchMobile from '../SearchMobile';
 
-const Header = ({ onClick, onBurgerMenuClick }) => {
+const Header = ({ handleClick, handleOpenBurgerMenu }) => {
   const [isOpenSearch, setIsOpenSearch] = useState(false);
   const [isOpenTagsBar, setIsOpenTagsBar] = useState(false)
 
@@ -103,7 +103,7 @@ const Header = ({ onClick, onBurgerMenuClick }) => {
         <div className={styles.container}>
           <div className={styles.headerMain}>
             <div className={styles.headerTop}>
-              <button className={styles.burgerMenu} onClick={onBurgerMenuClick}>
+              <button className={styles.burgerMenu} onClick={handleOpenBurgerMenu}>
                 <RxHamburgerMenu size={24} />
               </button>
               <Link className={styles.link} to="/">
@@ -154,7 +154,7 @@ const Header = ({ onClick, onBurgerMenuClick }) => {
                 <MdFavorite size={25} color="red" />
                 <span>Избранное</span>
               </button>
-              <button onClick={onClick} className={styles.button}>
+              <button onClick={handleClick} className={styles.button}>
                 <MdAccountCircle size={25} color="red" />
                 <span>Войти</span>
               </button>
