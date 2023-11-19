@@ -6,8 +6,14 @@ import IconsGenerator from '../IconsGenerator';
 const menu = [
   {
     id: 1,
-    link: '/',
+    // link: '/',
     name: 'Умный дом',
+    children: [
+      {
+        name: 'Еще меню 2',
+        link: '/about/company',
+      },
+    ],
   },
   {
     id: 2,

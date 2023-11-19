@@ -11,6 +11,7 @@ import LoginPopup from 'src/components/LoginPopup';
 import MenuMobile from 'src/components/MenuMobile';
 import BottomNav from 'src/components/BottomNav';
 import Layout from 'src/layouts/Layout';
+import Gofra from '../Gofra';
 
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,12 +34,8 @@ const App = () => {
             />
           }
         >
-          <Route
-            index
-            element={
-              <Home />
-            }
-          />
+          <Route index element={<Home />}/>
+          <Route path='products/gofra' element={<Gofra />} />
           <Route path="register" element={<Register />} />
           <Route path="user" element={<Profile />} />
           <Route path="*" element={<NotFoundPage />} />

@@ -1,4 +1,4 @@
-import { useHref } from 'react-router-dom';
+import { Link, useHref } from 'react-router-dom';
 import styles from './BottomNav.module.scss';
 import cn from 'classnames';
 import { AiOutlineHome, AiOutlineShoppingCart, AiOutlineUser } from 'react-icons/ai';
@@ -13,13 +13,13 @@ const BottomNav = () => {
       <nav className={styles.bottomNav}>
         <ul className={styles.navList}>
           <li className={styles.navItem}>
-            <a
+            <Link
               className={cn(styles.navLink, href == '/' ? styles.active : '')}
-              href="#"
+              to="/"
             >
               <AiOutlineHome size={20} />
               <span>Главная</span>
-            </a>
+            </Link>
           </li>
           <li className={styles.navItem}>
             <a className={styles.navLink} href="#">
