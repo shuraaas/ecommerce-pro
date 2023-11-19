@@ -7,7 +7,7 @@ const Footer = () => {
         <div className={styles.container}>
           <div className={styles.rowInner}>
             <div className={styles.logo}>
-              <img src="/logo/main-logo.png" alt="Логотип" />
+              <img src="/logo/logo.svg" alt="Логотип" />
               <div className={styles.call}>
                 <a href="#">Заказать звонок</a>
                 <span>8 800 100-54-41</span>

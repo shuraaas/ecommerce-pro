@@ -1,6 +1,7 @@
 import styles from './Header.module.scss';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import cn from 'classnames';
 import {
   MdFavorite,
   MdShoppingCart,
@@ -17,8 +18,22 @@ import SearchMobile from '../SearchMobile';
 
 const Header = ({ onClick, onBurgerMenuClick }) => {
   const [isOpenSearch, setIsOpenSearch] = useState(false);
+  const [isOpenTagsBar, setIsOpenTagsBar] = useState(false)
 
-  const popularTags = ['сетевой фильтр', 'умная лампочка', 'розетка', 'отвертка'];
+  const popularTags = [
+    'tag',
+    'tag',
+    'tag',
+    'tag',
+    'tag',
+    'tag',
+    'tag',
+    'tag',
+    'tag',
+    'tag',
+    'tag',
+    'tag',
+  ];
 
   return (
     <>
@@ -110,6 +125,7 @@ const Header = ({ onClick, onBurgerMenuClick }) => {
               <div className={styles.inputSearch}>
                 <input
                   className={styles.input}
+                  onClick={() => setIsOpenTagsBar(!isOpenTagsBar)}
                   type="text"
                   placeholder="Поиск по товарам"
                 />
@@ -117,11 +133,13 @@ const Header = ({ onClick, onBurgerMenuClick }) => {
                   <img src="/icons/search.svg" alt="Иконка поиска" />
                 </button>
               </div>
-              <div className={styles.tagsBar}>
+              <div className={cn(styles.tagsBar, {[styles.active]: isOpenTagsBar})}>
                 <span>Popular: </span>
                 <ul className={styles.tags}>
                   {popularTags.map((item, index) => (
-                    <li className={styles.tagsItem}></li>
+                    <li className={styles.tagsItem} key={index}>
+                      <a href="#">{item}</a>
+                    </li>
                   ))}
                 </ul>
               </div>
@@ -168,7 +186,10 @@ const Header = ({ onClick, onBurgerMenuClick }) => {
           </div>
         </div>
       </header>
-      <SearchMobile isOpen={isOpenSearch} onClose={() => setIsOpenSearch(false)} />
+      <SearchMobile
+        isOpen={isOpenSearch}
+        onClose={() => setIsOpenSearch(false)}
+      />
     </>
   );
 };
