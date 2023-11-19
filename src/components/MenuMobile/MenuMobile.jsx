@@ -6,14 +6,8 @@ import IconsGenerator from '../IconsGenerator';
 const menu = [
   {
     id: 1,
-    // link: '/',
+    link: '/',
     name: 'Умный дом',
-    children: [
-      {
-        name: 'Еще меню 2',
-        link: '/about/company',
-      },
-    ],
   },
   {
     id: 2,
@@ -22,8 +16,26 @@ const menu = [
   },
   {
     id: 3,
-    link: '/',
     name: 'Изделия для электромонтажа',
+    children: [
+      {
+        name: 'Трубы и держатели',
+        children: [
+          {
+            name: 'Труба гофрированная',
+            link: '/products/gofra',
+          },
+        ],
+      },
+      {
+        name: 'Изолента',
+        link: '/',
+      },
+      {
+        name: 'Знаки безопасности',
+        link: '/',
+      },
+    ],
   },
   {
     id: 4,
@@ -193,13 +205,16 @@ const MenuMobile = ({ isOpen, onClose }) => {
                 {item.map((m, index) => (
                   <div className={styles.link} key={m.name}>
                     {m.children && (
-                      <button
-                        className={styles.item}
-                        onClick={() => selectLevel(level + 1, m.children)}
-                      >
-                        {m.name}{' '}
-                        <img src="/icons/arrow-red.svg" alt="arrow-red" />
-                      </button>
+                      <>
+                        <IconsGenerator name={m.name} />
+                        <button
+                          className={styles.item}
+                          onClick={() => selectLevel(level + 1, m.children)}
+                        >
+                          {m.name}{' '}
+                          <img src="/icons/arrow-red.svg" alt="arrow-red" />
+                        </button>
+                      </>
                     )}
                     {m.link && (
                       <>

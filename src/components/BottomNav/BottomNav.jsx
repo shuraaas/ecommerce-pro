@@ -40,10 +40,10 @@ const BottomNav = () => {
             </a>
           </li>
           <li className={styles.navItem}>
-            <a className={styles.navLink} href="#">
+            <Link className={styles.navLink} to='/user'>
               <AiOutlineUser size={20} />
               <span>Войти</span>
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>
