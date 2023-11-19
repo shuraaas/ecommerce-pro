@@ -1,11 +1,15 @@
 import { Link, useHref } from 'react-router-dom';
 import styles from './BottomNav.module.scss';
 import cn from 'classnames';
-import { AiOutlineHome, AiOutlineShoppingCart, AiOutlineUser } from 'react-icons/ai';
+import {
+  AiOutlineHome,
+  AiOutlineShoppingCart,
+  AiOutlineUser,
+} from 'react-icons/ai';
 import { RiMenuSearchLine } from 'react-icons/ri';
 import { BsBookmark } from 'react-icons/bs';
 
-const BottomNav = () => {
+const BottomNav = ({ isOpen }) => {
   const href = useHref();
 
   return (
@@ -40,10 +44,10 @@ const BottomNav = () => {
             </a>
           </li>
           <li className={styles.navItem}>
-            <Link className={styles.navLink} to='/user'>
+            <button onClick={isOpen} className={styles.navLink}>
               <AiOutlineUser size={20} />
               <span>Войти</span>
-            </Link>
+            </button>
           </li>
         </ul>
       </nav>

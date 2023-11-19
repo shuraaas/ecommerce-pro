@@ -1,9 +1,10 @@
 import { useForm } from 'react-hook-form';
 import styles from './LoginForm.module.scss';
 
-const LoginForm = ({ buttonText }) => {
+const LoginForm = ({ buttonText, handleLogin }) => {
   const { register, handleSubmit } = useForm();
-  const submit = data => console.log(data);
+
+  const submit = () => handleLogin();
 
   const getInputNumbersValue = input => input.value.replace(/\D/g, '');
 
@@ -60,9 +61,10 @@ const LoginForm = ({ buttonText }) => {
         <label className={styles.label}>
           <input
             className={styles.input}
-            onInput={handlePhoneInput}
-            onKeyDown={handlePhoneKeyDown}
-            type="tel"
+            // onInput={handlePhoneInput}
+            // onKeyDown={handlePhoneKeyDown}
+            // type="tel"
+            type='text'
             placeholder=" "
             {...register('phone', { required: true, maxLength: 18 })}
           />

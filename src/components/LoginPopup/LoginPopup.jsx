@@ -3,7 +3,7 @@ import { Dialog } from '@headlessui/react';
 import { motion, AnimatePresence } from 'framer-motion';
 import LoginForm from '../LoginForm';
 
-const LoginPopup = ({ isOpen, onClose, title }) => {
+const LoginPopup = ({ isOpen, onClose, title, handleLogin }) => {
   return (
     <AnimatePresence>
       {isOpen && (
@@ -16,7 +16,7 @@ const LoginPopup = ({ isOpen, onClose, title }) => {
           >
             <Dialog.Panel className={styles.popup}>
               <Dialog.Title className={styles.title}>{title}</Dialog.Title>
-              <LoginForm buttonText="Войти" />
+              <LoginForm buttonText="Войти" handleLogin={handleLogin} />
               <button className={styles.close} onClick={onClose}></button>
             </Dialog.Panel>
           </motion.div>
