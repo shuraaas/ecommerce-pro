@@ -25,7 +25,7 @@ const Brands = () => {
                 spaceBetween={20}
                 speed={1000}
                 autoHeight
-                loop
+                // loop
                 // autoplay
                 // navigation
               >

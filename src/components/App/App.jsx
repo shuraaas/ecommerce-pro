@@ -1,7 +1,7 @@
 import styles from './App.module.scss';
 import { Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
-
+import { useSelector } from 'react-redux';
 import Register from 'src/pages/Register';
 import NotFoundPage from 'src/pages/NotFoundPage';
 import Home from 'src/pages/Home';
@@ -12,11 +12,14 @@ import MenuMobile from 'src/components/MenuMobile';
 import BottomNav from 'src/components/BottomNav';
 import Layout from 'src/layouts/Layout';
 import Gofra from '../Gofra';
+import Order from 'src/pages/Order';
+import Wishlist from 'src/pages/Wishlist';
 
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenBurgerMenu, setIsOpenBurgerMenu] = useState(false);
-  const [loggedIn, setLoggedIn] = useState(false);
+  // const [loggedIn, setLoggedIn] = useState(false);
+  const loggedIn = useSelector(state => state.user.isLoggedIn)
   const navigate = useNavigate();
 
   const handleProfileClick = () => {
@@ -25,17 +28,6 @@ const App = () => {
     } else {
       setIsOpen(true);
     }
-  };
-
-  const handleLogin = () => {
-    setLoggedIn(true);
-    navigate('/user');
-    setIsOpen(false);
-  };
-
-  const handleLogout = () => {
-    setLoggedIn(false);
-    navigate('/');
   };
 
   return (
@@ -53,8 +45,10 @@ const App = () => {
         >
           <Route index element={<Home />} />
           <Route path="products/gofra" element={<Gofra />} />
+          <Route path='order' element={<Order/>} />
           <Route path="register" element={<Register />} />
-          <Route path="user" element={<Profile onLogout={handleLogout} />} />
+          <Route path="user" element={<Profile />} />
+          <Route path="wishlist" element={<Wishlist />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
@@ -64,7 +58,7 @@ const App = () => {
         isOpen={isOpen}
         onClose={() => setIsOpen(false)}
         title="Вход"
-        handleLogin={handleLogin}
+        handleLogin={() => setIsOpen(false)}
       />
       <MenuMobile
         isOpen={isOpenBurgerMenu}

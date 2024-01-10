@@ -1,4 +1,5 @@
 import { Link, useHref } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import styles from './BottomNav.module.scss';
 import cn from 'classnames';
 import {
@@ -11,6 +12,7 @@ import { BsBookmark } from 'react-icons/bs';
 
 const BottomNav = ({ isOpen }) => {
   const href = useHref();
+  const isLoggedIn = useSelector(state => state.user.isLoggedIn);
 
   return (
     <div className={styles.mobileNav}>
@@ -32,22 +34,47 @@ const BottomNav = ({ isOpen }) => {
             </a>
           </li>
           <li className={styles.navItem}>
-            <a className={styles.navLink} href="#">
+            <Link
+              className={cn(
+                styles.navLink,
+                href == '/order' ? styles.active : '',
+              )}
+              to="order"
+            >
               <AiOutlineShoppingCart size={20} />
               <span>Корзина</span>
-            </a>
+            </Link>
           </li>
           <li className={styles.navItem}>
-            <a className={styles.navLink} href="#">
+            <Link
+              className={cn(
+                styles.navLink,
+                href == '/wishlist' ? styles.active : '',
+              )}
+              to="wishlist"
+            >
               <BsBookmark size={20} />
               <span>Избранное</span>
-            </a>
+            </Link>
           </li>
           <li className={styles.navItem}>
-            <button onClick={isOpen} className={styles.navLink}>
-              <AiOutlineUser size={20} />
-              <span>Войти</span>
-            </button>
+            {isLoggedIn ? (
+              <Link
+                className={cn(
+                  styles.navLink,
+                  href == '/user' ? styles.active : '',
+                )}
+                to="user"
+              >
+                <AiOutlineUser size={20} />
+                <span>Профиль</span>
+              </Link>
+            ) : (
+              <button onClick={isOpen} className={styles.navLink}>
+                <AiOutlineUser size={20} />
+                <span>Войти</span>
+              </button>
+            )}
           </li>
         </ul>
       </nav>

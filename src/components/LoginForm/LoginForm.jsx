@@ -1,10 +1,17 @@
 import { useForm } from 'react-hook-form';
+import { useSelector, useDispatch } from 'react-redux';
+import { login } from 'src/store/slices/userSlice';
 import styles from './LoginForm.module.scss';
 
 const LoginForm = ({ buttonText, handleLogin }) => {
   const { register, handleSubmit } = useForm();
+  const user = useSelector(state => state.user);
+  const dispatch = useDispatch();
 
-  const submit = () => handleLogin();
+  const submit = data => {
+    dispatch(login(data));
+    handleLogin();
+  };
 
   const getInputNumbersValue = input => input.value.replace(/\D/g, '');
 
@@ -64,9 +71,9 @@ const LoginForm = ({ buttonText, handleLogin }) => {
             // onInput={handlePhoneInput}
             // onKeyDown={handlePhoneKeyDown}
             // type="tel"
-            type='text'
+            type="text"
             placeholder=" "
-            {...register('phone', { required: true, maxLength: 18 })}
+            {...register('name', { required: true, maxLength: 18 })}
           />
           <span>Логин</span>
         </label>

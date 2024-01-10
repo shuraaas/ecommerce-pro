@@ -216,7 +216,7 @@ const Main = () => {
             </div>
             {/* <Slider className={styles.slider} slides={slides} /> */}
             <Swiper
-              style={{ borderRadius: '20px' }}
+              // style={{ borderRadius: '20px' }}
               modules={[Navigation, Pagination, Autoplay, A11y]}
               slidesPerView={1}
               className={styles.slider}
