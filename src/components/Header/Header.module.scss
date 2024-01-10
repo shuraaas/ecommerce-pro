@@ -246,6 +246,8 @@
       background: transparent;
       font-size: 14px;
       transition: background-color 0.2s linear;
+      text-decoration: none;
+      color: inherit;
 
       &:hover {
         cursor: pointer;

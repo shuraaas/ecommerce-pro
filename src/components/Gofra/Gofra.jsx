@@ -1,9 +1,12 @@
-import styles from './Gofra.module.scss';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import Breadcrumbs from '../Breadcrumbs';
+import styles from './Gofra.module.scss';
+import { Rate, Space } from 'antd';
 
 const Gofra = () => {
   const [amount, setAmount] = useState(0);
+  const [value, setValue] = useState(4);
   const { register, handleSubmit } = useForm({
     defaultValues: {
       amount: amount,
@@ -12,12 +15,14 @@ const Gofra = () => {
   const mainStore = 0;
   const remoteStore = 122;
   const price = 35;
+  const desc = ['1', '2', '3', '4', '5'];
 
   const submit = data => console.log(data);
 
   return (
     <section className={styles.gofra}>
       <div className={styles.container}>
+        <Breadcrumbs />
         <h2>Труба гибкая гофрированная с протяжкой DKC 20мм серая тяжел.</h2>
         <div className={styles.mainInfo}>
           <img
@@ -27,6 +32,10 @@ const Gofra = () => {
           />
           <div className={styles.product}>
             <div className={styles.productInfo}>
+              <Space>
+                <Rate tooltips={desc} onChange={setValue} value={value} />
+                {value ? <span>{desc[value - 1]}</span> : ''}
+              </Space>
               <p>
                 <span>Код товара: </span>
                 К00014375
@@ -62,11 +71,16 @@ const Gofra = () => {
                 <span>Основной склад: {mainStore} ед.</span>
                 <br />
                 <span>Удалённый склад: {remoteStore} ед.</span>
-                <p style={{ fontSize: '26px', paddingTop: '20px' }}>Итог: {amount * price} руб.</p>
+                <p style={{ fontSize: '26px', paddingTop: '20px' }}>
+                  Итог: {amount * price} руб.
+                </p>
               </div>
               <form onSubmit={handleSubmit(submit)}>
                 <div>
-                  <button type="button" onClick={() => amount && setAmount(amount - 1)}>
+                  <button
+                    type="button"
+                    onClick={() => amount && setAmount(amount - 1)}
+                  >
                     -
                   </button>
                   <input type="text" {...register('amount')} value={amount} />

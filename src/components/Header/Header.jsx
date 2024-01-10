@@ -15,10 +15,12 @@ import { CiMail } from 'react-icons/ci';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { BiSearch } from 'react-icons/bi';
 import SearchMobile from '../SearchMobile';
+import { useSelector } from 'react-redux';
 
-const Header = ({ handleClick, handleOpenBurgerMenu, loggedIn }) => {
+const Header = ({ handleClick, handleOpenBurgerMenu }) => {
   const [isOpenSearch, setIsOpenSearch] = useState(false);
   const [isOpenTagsBar, setIsOpenTagsBar] = useState(false);
+  const isLoggedIn = useSelector(state => state.user.isLoggedIn);
 
   const popularTags = [
     'tag',
@@ -157,18 +159,25 @@ const Header = ({ handleClick, handleOpenBurgerMenu, loggedIn }) => {
                 <MdBalance size={25} color="red" />
                 <span>Сравнение</span>
               </button>
-              <button className={styles.button}>
+              <Link className={styles.button} to="wishlist">
                 <MdFavorite size={25} color="red" />
                 <span>Избранное</span>
-              </button>
-              <button className={styles.button}>
+              </Link>
+              <Link className={styles.button} to="order">
                 <MdShoppingCart size={25} color="red" />
                 <span>Корзина</span>
-              </button>
-              <button onClick={handleClick} className={styles.button}>
-                <MdAccountCircle size={25} color="red" />
-                {loggedIn ? <span>Профиль</span> : <span>Войти</span>}
-              </button>
+              </Link>
+              {isLoggedIn ? (
+                <Link className={styles.button} to="user">
+                  <MdAccountCircle size={25} color="red" />
+                  <span>Профиль</span>
+                </Link>
+              ) : (
+                <button onClick={handleClick} className={styles.button}>
+                  <MdAccountCircle size={25} color="red" />
+                  <span>Войти</span>
+                </button>
+              )}
             </div>
           </div>
         </div>
