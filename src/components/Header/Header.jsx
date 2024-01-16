@@ -16,6 +16,7 @@ import { RxHamburgerMenu } from 'react-icons/rx';
 import { BiSearch } from 'react-icons/bi';
 import SearchMobile from '../SearchMobile';
 import { useSelector } from 'react-redux';
+import { Badge } from 'antd';
 
 const Header = ({ handleClick, handleOpenBurgerMenu }) => {
   const [isOpenSearch, setIsOpenSearch] = useState(false);
@@ -164,7 +165,9 @@ const Header = ({ handleClick, handleOpenBurgerMenu }) => {
                 <span>Избранное</span>
               </Link>
               <Link className={styles.button} to="order">
-                <MdShoppingCart size={25} color="red" />
+                <Badge size="middle" color="red" count={1}>
+                  <MdShoppingCart size={25} color="red" />
+                </Badge>
                 <span>Корзина</span>
               </Link>
               {isLoggedIn ? (

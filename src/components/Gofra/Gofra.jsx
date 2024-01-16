@@ -2,14 +2,54 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Breadcrumbs from '../Breadcrumbs';
 import styles from './Gofra.module.scss';
-import { Rate, Space } from 'antd';
+import { Rate, Space, Descriptions } from 'antd';
+import { CiHeart } from 'react-icons/ci';
+import cn from 'classnames';
+
+const items = [
+  {
+    key: '1',
+    label: 'Код товара',
+    children: 'К00014375',
+  },
+  {
+    key: '2',
+    label: 'Артикул',
+    children: '91520',
+  },
+  {
+    key: '3',
+    label: 'ID',
+    children: '34751',
+  },
+  {
+    key: '4',
+    label: 'Штрихкод',
+    children: '4607004490088',
+  },
+  {
+    key: '5',
+    label: 'Вес в упаковке',
+    children: '6.77 кг',
+  },
+  {
+    key: '6',
+    label: 'Габариты в упаковке',
+    children: '595×592×202 мм',
+  },
+  {
+    key: '7',
+    label: 'Кол-во в упаковке',
+    children: '100 м',
+  },
+];
 
 const Gofra = () => {
   const [amount, setAmount] = useState(0);
   const [value, setValue] = useState(4);
   const { register, handleSubmit } = useForm({
     defaultValues: {
-      amount: amount,
+      amount,
     },
   });
   const mainStore = 0;
@@ -23,50 +63,60 @@ const Gofra = () => {
     <section className={styles.gofra}>
       <div className={styles.container}>
         <Breadcrumbs />
-        <h2>Труба гибкая гофрированная с протяжкой DKC 20мм серая тяжел.</h2>
+        <h2 className={styles.productTitle}>
+          Труба гибкая гофрированная с протяжкой DKC 20мм серая тяжел.
+        </h2>
         <div className={styles.mainInfo}>
-          <img
-            className={styles.image}
-            src="https://мкэлектро.рф/images/virtuemart/product/truba-gofrirovannaya-s-protyajkoy-d20-mm-100-m-seraya-tyaj-dkc-2.jpg"
-            alt="Труба гибкая гофрированная с протяжкой DKC 20мм серая тяжел"
-          />
-          <div className={styles.product}>
-            <div className={styles.productInfo}>
-              <Space>
-                <Rate tooltips={desc} onChange={setValue} value={value} />
-                {value ? <span>{desc[value - 1]}</span> : ''}
-              </Space>
-              <p>
-                <span>Код товара: </span>
-                К00014375
-              </p>
-              <p>
-                <span>Артикул: </span>
-                91520
-              </p>
-              <p>
-                <span>ID: </span>
-                34751
-              </p>
-              <p>
-                <span>Штрихкод: </span>
-                4607004490088
-              </p>
-              <p>
-                <span>Вес в упаковке: </span>
-                6.77 кг
-              </p>
-              <p>
-                <span>Габариты в упаковке: </span>
-                595×592×202 мм
-              </p>
-              <p>
-                <span>Кол-во в упаковке: </span>
-                100 м
-              </p>
+          <div className={styles.mainInfoWrap}>
+            <div className={styles.imageSection}>
+              {/* <img
+              className={styles.image}
+              src="https://мкэлектро.рф/images/virtuemart/product/truba-gofrirovannaya-s-protyajkoy-d20-mm-100-m-seraya-tyaj-dkc-2.jpg"
+              alt="Труба гибкая гофрированная с протяжкой DKC 20мм серая тяжел"
+            /> */}
+              <div className={styles.allImages}>
+                <img className={styles.active} src="/carousel/1.jpg" alt="" />
+                <img src="/carousel/2.jpg" alt="" />
+                <img src="/carousel/3.jpg" alt="" />
+                <img src="/carousel/1.jpg" alt="" />
+                <img src="/carousel/2.jpg" alt="" />
+                <img src="/carousel/3.jpg" alt="" />
+              </div>
+
+              <img className={styles.mainImage} src="/carousel/1.jpg" alt="" />
             </div>
-            <div className={styles.productOrder}>
-              <div className={styles.orderInfo}>
+
+            <div className={styles.productSection}>
+              <h3 className={styles.productFullName}>
+                Труба гофрированная с протяжкой d=20 мм (100 м) серая тяж. DKC
+              </h3>
+              <div className={styles.rating}>
+                <Space>
+                  <Rate tooltips={desc} onChange={setValue} value={value} />
+                  {value ? <span>{desc[value - 1]}</span> : ''}
+                </Space>
+              </div>
+              <div className={styles.productOrder}>
+                <div className={styles.order}>
+                  <span className={styles.price}>399 ₽</span>
+                  <button className={cn(styles.btn, styles.btnFavourite)}>
+                    <CiHeart size={25} />
+                  </button>
+                  <button className={cn(styles.btn, styles.btnToCart)}>
+                    Купить
+                  </button>
+                </div>
+                <div className={styles.orderInfo}>
+                  <div className={styles.inStock}>
+                    <span>В наличии:</span>
+                    <a href="#">в 11 магазинах</a>
+                  </div>
+                  <div className={styles.delivery}>
+                    <span>Доставим на дом:</span>
+                    <a href="#">завтра</a>
+                  </div>
+                </div>
+                {/* <div className={styles.orderInfo}>
                 <p>В наличии:</p>
                 <span>Основной склад: {mainStore} ед.</span>
                 <br />
@@ -74,8 +124,8 @@ const Gofra = () => {
                 <p style={{ fontSize: '26px', paddingTop: '20px' }}>
                   Итог: {amount * price} руб.
                 </p>
-              </div>
-              <form onSubmit={handleSubmit(submit)}>
+              </div> */}
+                {/* <form onSubmit={handleSubmit(submit)}>
                 <div>
                   <button
                     type="button"
@@ -90,44 +140,27 @@ const Gofra = () => {
                 </div>
 
                 <button className={styles.buy}>Купить</button>
-              </form>
+              </form> */}
+              </div>
             </div>
           </div>
+          <span>Код товара: 5408515</span>
+        </div>
+        <div className={styles.specifications}>
+          <h3>Характеристики</h3>
+          <Descriptions items={items} bordered />
         </div>
         <div className={styles.description}>
           <h3>Описание</h3>
           <p>
-            Далеко-далеко за словесными горами в стране, гласных и согласных
-            живут рыбные тексты. Большой лучше ее маленький заголовок сбить
-            заманивший океана власти парадигматическая буквенных деревни,
-            залетают, путь подпоясал продолжил назад то своего раз страну?
-            Власти рекламных одна, вопроса рукописи на берегу это предупреждал,
-            все буквоград переулка живет жизни переписывается языком которой пор
-            эта дал. Далеко-далеко за словесными горами в стране гласных и
-            согласных живут, рыбные тексты. Своих себя ее мир своего раз вдали
-            использовало. За языкового строчка даже меня страну,
-            парадигматическая если диких. Напоивший языкового своих деревни,
-            букв встретил ее родного осталось послушавшись буквенных города за
-            строчка, грамматики безопасную путь взгляд дороге о свой сбить.
-            Деревни. Далеко-далеко за, словесными горами в стране гласных и
-            согласных живут рыбные тексты. Живет рыбными, его парадигматическая
-            то свой ему города безопасную буквоград единственное коварный.
-            Пустился деревни приставка агентство пояс его текст коварный, свою
-            своих дорогу себя текстов диких? Буквенных лучше оксмокс выйти снова
-            образ речью, рукописи буквоград единственное вопроса подзаголовок,
-            путь алфавит коварный ручеек пунктуация злых вопрос приставка
-            заглавных на берегу рукопись себя которое безорфографичный! Дорогу
-            жизни, однажды заголовок рот залетают раз продолжил рукописи эта
-            инициал пор взобравшись, там бросил несколько которой назад,
-            текстами последний коварный взгляд. Строчка подпоясал дал, собрал
-            толку даже раз там продолжил вопроса диких несколько деревни однажды
-            алфавит составитель.
+            Труба гибкая гофрированная с протяжкой DKC диаметром 20мм, серая,
+            тяжелая - популярное решение для прокладки электропроводки в
+            помещениях, относящихся к жилой и коммерческой недвижимости. Тяжелая
+            серия отличается большой ударопрочностью и устойчивостью к
+            нагрузкам. Входящая в комплект протяжка облегчает прокладку кабеля
+            во внутреннем пространстве трубы.
           </p>
         </div>
-        {/* <div>
-          <h3>Отзывы</h3>
-          <p>Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Большой лучше ее маленький заголовок сбить заманивший океана власти парадигматическая буквенных деревни, залетают, путь подпоясал продолжил назад то своего раз страну? Власти рекламных одна, вопроса рукописи на берегу это предупреждал, все буквоград переулка живет жизни переписывается языком которой пор эта дал. Далеко-далеко за словесными горами в стране гласных и согласных живут, рыбные тексты. Своих себя ее мир своего раз вдали использовало. За языкового строчка даже меня страну, парадигматическая если диких. Напоивший языкового своих деревни, букв встретил ее родного осталось послушавшись буквенных города за строчка, грамматики безопасную путь взгляд дороге о свой сбить. Деревни. Далеко-далеко за, словесными горами в стране гласных и согласных живут рыбные тексты. Живет рыбными, его парадигматическая то свой ему города безопасную буквоград единственное коварный. Пустился деревни приставка агентство пояс его текст коварный, свою своих дорогу себя текстов диких? Буквенных лучше оксмокс выйти снова образ речью, рукописи буквоград единственное вопроса подзаголовок, путь алфавит коварный ручеек пунктуация злых вопрос приставка заглавных на берегу рукопись себя которое безорфографичный! Дорогу жизни, однажды заголовок рот залетают раз продолжил рукописи эта инициал пор взобравшись, там бросил несколько которой назад, текстами последний коварный взгляд. Строчка подпоясал дал, собрал толку даже раз там продолжил вопроса диких несколько деревни однажды алфавит составитель.</p>
-        </div> */}
       </div>
     </section>
   );

@@ -9,6 +9,7 @@ import {
 } from 'react-icons/ai';
 import { RiMenuSearchLine } from 'react-icons/ri';
 import { BsBookmark } from 'react-icons/bs';
+import { Badge } from 'antd';
 
 const BottomNav = ({ isOpen }) => {
   const href = useHref();
@@ -41,7 +42,9 @@ const BottomNav = ({ isOpen }) => {
               )}
               to="order"
             >
-              <AiOutlineShoppingCart size={20} />
+              <Badge size='small' count={1}>
+                <AiOutlineShoppingCart size={20} />
+              </Badge>
               <span>Корзина</span>
             </Link>
           </li>

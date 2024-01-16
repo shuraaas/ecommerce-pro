@@ -6,7 +6,7 @@ const ProductsList = () => {
   return (
     <section className={styles.productsList}>
       <div className={styles.container}>
-        <h2 className={styles.title}>Хиты</h2>
+        <h2 className={styles.title}>Товары</h2>
         <ul className={styles.productsListInner}>
           {data.map(card => (
             <ProductsCard key={card.id} {...card} />

@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { Empty } from 'antd';
 import styles from './Wishlist.module.scss';
 
 const Wishlist = () => {
@@ -15,7 +16,9 @@ const Wishlist = () => {
               <li>тут избранные товары</li>
             </ul>
           ) : (
-            <p>Пока нет товаров в избранном</p>
+            <Empty description>
+              <p>Избранных товаров нет</p>
+            </Empty>
           )}
         </div>
       </div>

@@ -8,7 +8,7 @@ const Breadcrumbs = () => {
       items={[
         {
           title: 'Главная',
-          href: '/'
+          href: '/',
         },
         {
           title: 'Изделия для электромонтажа',
