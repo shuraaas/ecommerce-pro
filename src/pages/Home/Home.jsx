@@ -1,9 +1,9 @@
-import Subscription from 'src/components/Subscription';
-import News from 'src/components/News';
-import Brands from 'src/components/Brands';
-import Trust from 'src/components/Trust';
-import ProductsList from 'src/components/ProductsList';
-import Main from 'src/components/Main';
+import Subscription from '@/components/Subscription';
+import News from '@/components/News';
+import Brands from '@/components/Brands';
+import Trust from '@/components/Trust';
+import ProductsList from '@/components/ProductsList';
+import Main from '@/components/Main';
 
 const Home = () => {
   return (

@@ -1,30 +1,32 @@
-import styles from './App.module.scss';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import Register from 'src/pages/Register';
-import NotFoundPage from 'src/pages/NotFoundPage';
-import Home from 'src/pages/Home';
-import Profile from 'src/pages/Profile';
-import { useNavigate } from 'react-router-dom';
-import LoginPopup from 'src/components/LoginPopup';
-import MenuMobile from 'src/components/MenuMobile';
-import BottomNav from 'src/components/BottomNav';
-import Layout from 'src/layouts/Layout';
+import Register from '@/pages/Register';
+import NotFoundPage from '@/pages/NotFoundPage';
+import Home from '@/pages/Home';
+import Profile from '@/pages/ProfilePage/Profile';
+import Club from '@/pages/ProfilePage/Club';
+import Delivery from '@/pages/ProfilePage/Delivery';
+import Orders from '@/pages/ProfilePage/Orders';
+import LoginPopup from '@/components/LoginPopup';
+import MenuMobile from '@/components/MenuMobile';
+import BottomNav from '@/components/BottomNav';
+import MainLayout from '@/layouts/MainLayout';
 import Gofra from '../Gofra';
-import Order from 'src/pages/Order';
-import Wishlist from 'src/pages/Wishlist';
+import Order from '@/pages/Order';
+import Wishlist from '@/pages/Wishlist';
+import ProfileLayout from '@/layouts/ProfileLayout';
+import styles from './App.module.scss';
 
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenBurgerMenu, setIsOpenBurgerMenu] = useState(false);
-  // const [loggedIn, setLoggedIn] = useState(false);
-  const loggedIn = useSelector(state => state.user.isLoggedIn)
+  const loggedIn = useSelector(state => state.user.isLoggedIn);
   const navigate = useNavigate();
 
   const handleProfileClick = () => {
     if (loggedIn) {
-      navigate('/user');
+      navigate('/profile');
     } else {
       setIsOpen(true);
     }
@@ -36,7 +38,7 @@ const App = () => {
         <Route
           path="/"
           element={
-            <Layout
+            <MainLayout
               handleClick={handleProfileClick}
               handleOpenBurgerMenu={() => setIsOpenBurgerMenu(true)}
               loggedIn={loggedIn}
@@ -45,15 +47,23 @@ const App = () => {
         >
           <Route index element={<Home />} />
           <Route path="products/gofra" element={<Gofra />} />
-          <Route path='order' element={<Order/>} />
+          <Route path="order" element={<Order />} />
           <Route path="register" element={<Register />} />
-          <Route path="user" element={<Profile />} />
+          <Route path="profile/*" element={<ProfileLayout />}>
+            <Route path="" element={<Profile />} />
+            <Route path="orders" element={<Orders />} />
+            <Route path="club" element={<Club />} />
+            <Route path="delivery" element={<Delivery />} />
+          </Route>
           <Route path="wishlist" element={<Wishlist />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
 
-      <BottomNav isOpen={handleProfileClick} />
+      <BottomNav
+        handleOpenBurgerMenu={() => setIsOpenBurgerMenu(true)}
+        isOpen={handleProfileClick}
+      />
       <LoginPopup
         isOpen={isOpen}
         onClose={() => setIsOpen(false)}

@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 import { useSelector, useDispatch } from 'react-redux';
-import { login } from 'src/store/slices/userSlice';
+import { login } from '@/store/slices/userSlice';
 import styles from './LoginForm.module.scss';
 
 const LoginForm = ({ buttonText, handleLogin }) => {

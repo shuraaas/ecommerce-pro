@@ -11,7 +11,7 @@ import { RiMenuSearchLine } from 'react-icons/ri';
 import { BsBookmark } from 'react-icons/bs';
 import { Badge } from 'antd';
 
-const BottomNav = ({ isOpen }) => {
+const BottomNav = ({ isOpen, handleOpenBurgerMenu }) => {
   const href = useHref();
   const isLoggedIn = useSelector(state => state.user.isLoggedIn);
 
@@ -29,7 +29,11 @@ const BottomNav = ({ isOpen }) => {
             </Link>
           </li>
           <li className={styles.navItem}>
-            <a className={styles.navLink} href="#">
+            <a
+              onClick={handleOpenBurgerMenu}
+              className={styles.navLink}
+              href="#"
+            >
               <RiMenuSearchLine size={20} />
               <span>Каталог</span>
             </a>
@@ -42,7 +46,7 @@ const BottomNav = ({ isOpen }) => {
               )}
               to="order"
             >
-              <Badge size='small' count={1}>
+              <Badge size="small" count={1}>
                 <AiOutlineShoppingCart size={20} />
               </Badge>
               <span>Корзина</span>
@@ -65,9 +69,9 @@ const BottomNav = ({ isOpen }) => {
               <Link
                 className={cn(
                   styles.navLink,
-                  href == '/user' ? styles.active : '',
+                  href == '/profile' ? styles.active : '',
                 )}
-                to="user"
+                to="profile"
               >
                 <AiOutlineUser size={20} />
                 <span>Профиль</span>

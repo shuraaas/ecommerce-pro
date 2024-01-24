@@ -1,0 +1,27 @@
+@import '../../../scss/media_breakpoints';
+@import '../../../scss/variables';
+
+.title {
+  margin: 0;
+  padding-block-end: 10px;
+}
+
+.profileWrap {
+  display: grid;
+  grid: 50% 50% / 50% 50%;
+  gap: 10px;
+}
+
+.userInfo,
+.userBonus,
+.userStatus {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+@include mobile {
+  .profileWrap {
+    grid: unset;
+  }
+}

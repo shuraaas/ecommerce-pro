@@ -1,6 +1,8 @@
 import styles from './Footer.module.scss';
 
 const Footer = () => {
+  const date = new Date();
+
   return (
     <footer className={styles.footer}>
       <div className={styles.row}>
@@ -104,7 +106,7 @@ const Footer = () => {
       <div className={styles.footerBottom}>
         <div className={styles.container}>
           <p>
-            &copy; 2012-2023 МК ЭЛЕКТРО. Оптово-розничная сеть и
+            &copy; 2012-{date.getFullYear()} МК ЭЛЕКТРО. Оптово-розничная сеть и
             интернет-магазин электротехнической продукции с доставкой по РФ и
             СНГ.
           </p>

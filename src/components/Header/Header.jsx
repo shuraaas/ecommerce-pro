@@ -171,7 +171,7 @@ const Header = ({ handleClick, handleOpenBurgerMenu }) => {
                 <span>Корзина</span>
               </Link>
               {isLoggedIn ? (
-                <Link className={styles.button} to="user">
+                <Link className={styles.button} to="profile">
                   <MdAccountCircle size={25} color="red" />
                   <span>Профиль</span>
                 </Link>

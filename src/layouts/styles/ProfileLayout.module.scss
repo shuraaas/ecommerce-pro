@@ -1,0 +1,149 @@
+@import '../../scss/_media_breakpoints.scss';
+
+.container {
+  max-width: 1200px;
+  min-width: 320px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  margin: 0;
+  padding-block: 20px;
+}
+
+.user {
+  padding-block-end: 20px;
+}
+
+.userInner {
+  display: flex;
+  gap: 20px;
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px;
+    font-size: 18px;
+    background-color: #f6f6f6;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 200px;
+
+    .link {
+      color: inherit;
+      text-decoration: none;
+      // padding: 0 10px 10px;
+      // padding-bottom: 10px;
+
+      &:hover {
+        color: red;
+      }
+    }
+
+    .active {
+      font-weight: 600;
+    }
+  }
+
+  .menuWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .info {
+    flex: 1;
+    padding: 20px;
+    background-color: #f6f6f6;
+    border-radius: 10px;
+    font-size: 16px;
+  }
+}
+
+.user {
+  .mainInfo {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    // padding-bottom: 50px;
+
+    img {
+      max-width: 400px;
+      width: 100%;
+      height: auto;
+    }
+
+    .info {
+      flex: 1;
+      // padding: 40px;
+      background-color: #eaeaea;
+      border-radius: 10px;
+      position: relative;
+
+      p {
+        margin: 10px 0;
+      }
+
+      span {
+        font-weight: 500;
+      }
+
+      button {
+        border: none;
+        position: absolute;
+        right: 30px;
+        bottom: 30px;
+        padding: 20px 40px;
+        background-color: #de002b;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 20px;
+        font-weight: 500;
+        transition: 0.2s ease;
+
+        &:hover {
+          background-color: #c80027;
+        }
+      }
+    }
+  }
+}
+
+@include mobile {
+  .container {
+    min-width: 320px;
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  .user {
+    padding: 20px 0;
+    font-size: 14px;
+  }
+
+  .userInner {
+    flex-direction: column;
+    gap: 5px;
+
+    .menu {
+      padding: 10px;
+      max-width: unset;
+      font-size: 12px;
+      gap: 5px;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .menuWrapper {
+      flex-direction: row;
+      gap: 10px;
+    }
+
+    .info {
+      padding: 10px;
+    }
+  }
+}
