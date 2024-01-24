@@ -1,6 +1,6 @@
 import styles from './ProductsList.module.scss';
 import ProductsCard from '../ProductsCard';
-import data from '../../db/productsList.json';
+import data from '../../db/products.json';
 
 const ProductsList = () => {
   return (

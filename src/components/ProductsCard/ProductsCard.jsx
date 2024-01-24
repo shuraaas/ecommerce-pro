@@ -1,58 +1,61 @@
 import { useDispatch } from 'react-redux';
 import { addToCart } from '@/store/slices/cartSlice';
-import styles from './ProductsCard.module.scss';
 import { useState } from 'react';
+import { CiHeart } from 'react-icons/ci';
+import { PiShoppingCartLight } from 'react-icons/pi';
+import { Checkbox, Rate } from 'antd';
 import cn from 'classnames';
+import styles from './ProductsCard.module.scss';
 
-const ProductsCard = ({ image, price, brand, title, inStock }) => {
-  const dispatch = useDispatch();
-  const [counter, setCounter] = useState(0);
-
-
-  const handleRemoveClick = () => {
-    if (counter === 0) return;
-    setCounter(counter - 1);
-  };
-  const handleAddClick = () => {
-    setCounter(counter + 1);
-    dispatch(addToCart({
-      id: Date.now().toString(),
-      image,
-      price,
-      brand,
-      title,
-      inStock,
-      amount: counter,
-    }))
-  };
-
-
+const ProductsCard = data => {
+  const {
+    id,
+    title,
+    artikul,
+    sku,
+    weight,
+    length,
+    width,
+    height,
+    ed_izm,
+    slug,
+    image,
+    description,
+    price,
+    quantity,
+    available,
+    created,
+    updated,
+    category,
+    brand,
+    stock,
+  } = data;
+  const [value, setValue] = useState(3);
 
   return (
-    <li className={styles.productsCard}>
-      <a href="#">
-        <img className={styles.img} src={image} alt={title} />
-      </a>
+    <li className={styles.card}>
+      <div className={styles.prewiev}>
+        <a href="#">
+          {/* <img className={styles.img} src="https://placehold.co/200" alt="" /> */}
+          <img className={styles.img} src={image[0] || image} alt="" />
+        </a>
+        <a className={styles.link} href="#">
+          <p className={styles.title}>{title}</p>
+        </a>
+      </div>
       <div className={styles.info}>
-        <div className={styles.cardInfo}>
-          <div className={styles.infoHeader}>
-            <a className={styles.link} href="#">
-              <h2 className={styles.title}>{title}</h2>
-            </a>
-            <p className={styles.price}>{price} руб.</p>
-          </div>
-          <p className={styles.inStock}>{inStock ? `В наличии: ${inStock} шт.` : `В наличии в других городах`}</p>
+        <div className={styles.reviews}>
+          <Checkbox className={styles.compare}>Сравнить</Checkbox>
+          <Rate className={styles.rate} value={value} onChange={setValue} />
         </div>
-        <div className={styles.addCart}>
-          <button
-            onClick={handleRemoveClick}
-            className={cn(styles.btn, styles.btnRemove)}
-          ></button>
-          <span className={styles.counter}>{counter}</span>
-          <button
-            onClick={handleAddClick}
-            className={cn(styles.btn, styles.btnAdd)}
-          ></button>
+        <div className={styles.order}>
+          <span className={styles.price}>{price} ₽</span>
+          <button className={cn(styles.btn, styles.btnFavourite)}>
+            <CiHeart size={25} />
+          </button>
+          <button className={cn(styles.btn, styles.btnToCart)}>
+            <PiShoppingCartLight size={25} />
+          </button>
         </div>
       </div>
     </li>
