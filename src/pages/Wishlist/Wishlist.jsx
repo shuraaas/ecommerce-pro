@@ -1,9 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { Empty } from 'antd';
 import styles from './Wishlist.module.scss';
+import WishlistCard from '@/components/WishlistCard';
 
 const Wishlist = () => {
-  const wishlist = useSelector(state => state.wishlist.wishlist);
+  const wishlist = useSelector(state => state.wishlist.items);
   const dispatch = useDispatch();
 
   return (
@@ -12,8 +13,10 @@ const Wishlist = () => {
         <h2>Избранное</h2>
         <div className={styles.main}>
           {wishlist.length !== 0 ? (
-            <ul>
-              <li>тут избранные товары</li>
+            <ul className={styles.list}>
+              {wishlist.map(item => (
+                <WishlistCard key={item.id} {...item}/>
+              ))}
             </ul>
           ) : (
             <Empty description>
