@@ -68,7 +68,7 @@
     font-size: 18px;
     font-weight: 600;
     // background-color: #eee;
-    background: linear-gradient(270deg,#f6f6f6,hsla(0,0%,100%,0));
+    background: linear-gradient(270deg, #f6f6f6, hsla(0, 0%, 100%, 0));
     padding-block: 10px;
     border-radius: 10px;
   }
@@ -83,26 +83,48 @@
     align-items: center;
     justify-content: center;
     border-radius: 10px;
+    border: 1px solid #bbb;
+    color: #bbb;
     font-weight: 500;
-    transition: background-color .1s ease-in-out;
+    transition: background-color 0.1s ease-in-out;
   }
 
   .btnFavourite {
-    border: 1px solid #bbb;
-    color: #bbb;
-
     &:hover {
       background-color: #eee;
     }
   }
 
+  .btnFavouriteActive {
+    border-color: $color-primary;
+    color: $color-primary;
+
+    &:hover {
+      background-color: white;
+      border-color: #eee;
+      color: #eee;
+    }
+  }
+
   .btnToCart {
-    color: #fff;
-    background-color: $color-primary;
+    // background-color: $color-primary;
     padding-block: 0;
 
     &:hover {
       background-color: #ca0027;
+      color: white;
+    }
+  }
+
+  .btnToCartActive {
+    background-color: $color-primary;
+    border-color: $color-primary;
+    color: white;
+
+    &:hover {
+      background-color: white;
+      border-color: #eee;
+      color: #eee;
     }
   }
 }
