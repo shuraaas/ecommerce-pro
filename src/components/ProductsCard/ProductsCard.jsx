@@ -7,6 +7,7 @@ import { PiShoppingCartLight, PiCheck, PiHeart } from 'react-icons/pi';
 import { Checkbox, Rate } from 'antd';
 import cn from 'classnames';
 import styles from './ProductsCard.module.scss';
+import { Link } from 'react-router-dom';
 
 const ProductsCard = data => {
   const {
@@ -35,13 +36,13 @@ const ProductsCard = data => {
   const dispatch = useDispatch();
   const [value, setValue] = useState(3);
   const wishlist = useSelector(state => state.wishlist.items);
-  const inWishlist = wishlist.filter(item => item.id === data.id);
+  const cart = useSelector(state => state.cart.items);
+  const inWishlist = wishlist.some(item => item.id === data.id);
+  const inCart = cart.some(item => item.id === data.id);
 
   const handleWishlistClick = () => dispatch(toggleWishlistItem(data));
 
-  const handleCartClick = () => {
-    console.log('cart');
-  };
+  const handleCartClick = () => dispatch(addToCart(data));
 
   return (
     <li className={styles.card}>
@@ -66,18 +67,30 @@ const ProductsCard = data => {
             className={cn(
               styles.btn,
               styles.btnFavourite,
-              inWishlist[0] && styles.btnFavouriteActive,
+              inWishlist && styles.btnFavouriteActive,
             )}
           >
             <PiHeart size={25} />
           </button>
-          <button
-            onClick={handleCartClick}
-            className={cn(styles.btn, styles.btnToCart)}
-          >
-            <PiShoppingCartLight size={25} />
-            {/* <PiCheck size={25} /> */}
-          </button>
+          {inCart ? (
+            <Link
+              to="/cart"
+              className={cn(
+                styles.btn,
+                styles.btnToCart,
+                styles.btnToCartActive,
+              )}
+            >
+              <PiCheck size={25} />
+            </Link>
+          ) : (
+            <button
+              onClick={handleCartClick}
+              className={cn(styles.btn, styles.btnToCart)}
+            >
+              <PiShoppingCartLight size={25} />
+            </button>
+          )}
         </div>
       </div>
     </li>

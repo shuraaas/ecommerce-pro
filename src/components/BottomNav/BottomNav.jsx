@@ -14,6 +14,8 @@ import { Badge } from 'antd';
 const BottomNav = ({ isOpen, handleOpenBurgerMenu }) => {
   const href = useHref();
   const isLoggedIn = useSelector(state => state.user.isLoggedIn);
+  const wishlistLength = useSelector(state => state.wishlist.items).length;
+  const cartLength = useSelector(state => state.cart.items).length;
 
   return (
     <div className={styles.mobileNav}>
@@ -42,11 +44,11 @@ const BottomNav = ({ isOpen, handleOpenBurgerMenu }) => {
             <Link
               className={cn(
                 styles.navLink,
-                href == '/order' ? styles.active : '',
+                href == '/cart' ? styles.active : '',
               )}
-              to="order"
+              to="cart"
             >
-              <Badge size="small" count={1}>
+              <Badge size="small" count={cartLength}>
                 <AiOutlineShoppingCart size={20} />
               </Badge>
               <span>Корзина</span>
@@ -60,7 +62,9 @@ const BottomNav = ({ isOpen, handleOpenBurgerMenu }) => {
               )}
               to="wishlist"
             >
-              <BsBookmark size={20} />
+              <Badge size="small" count={wishlistLength}>
+                <BsBookmark size={20} />
+              </Badge>
               <span>Избранное</span>
             </Link>
           </li>

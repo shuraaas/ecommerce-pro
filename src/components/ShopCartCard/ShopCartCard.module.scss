@@ -1,23 +1,17 @@
-.container {
-  max-width: 1200px;
-  min-width: 320px;
-  width: 100%;
-  margin: 0 auto;
-  padding-inline: 15px;
-}
-
-.wishlist {
-  padding-block-end: 20px;
-}
-
-.main {
-}
-
-.list {
-  margin: 0;
-  padding: 0;
+.card {
   display: flex;
-  flex-direction: column;
+  align-items: center;
   gap: 10px;
-  list-style: none;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.img {
+  width: 100%;
+  max-width: 100px;
+}
+
+.title {
+  margin: 0;
 }

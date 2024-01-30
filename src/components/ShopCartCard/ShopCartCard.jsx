@@ -1,6 +1,6 @@
-import styles from './WishlistCard.module.scss';
+import styles from './ShopCartCard.module.scss';
 
-const WishlistCard = item => {
+const ShopCartCard = item => {
   return (
     <li className={styles.card}>
       <img className={styles.img} src={item.image[0] || item.image} alt={item.title} />
@@ -9,4 +9,4 @@ const WishlistCard = item => {
   );
 };
 
-export default WishlistCard;
+export default ShopCartCard;

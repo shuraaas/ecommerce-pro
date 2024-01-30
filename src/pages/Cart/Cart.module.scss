@@ -1,0 +1,60 @@
+.container {
+  max-width: 1200px;
+  min-width: 320px;
+  width: 100%;
+  margin: 0 auto;
+  padding-inline: 15px;
+}
+
+.cart {
+  padding-block-end: 20px;
+}
+
+.cartInner {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+}
+
+.order {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #eee;
+}
+
+.amountBlock {
+  span {
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  .amount {
+    display: flex;
+    justify-content: space-between;
+
+    p {
+      display: block;
+      margin: 0;
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
+}

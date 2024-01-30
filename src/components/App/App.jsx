@@ -13,7 +13,7 @@ import MenuMobile from '@/components/MenuMobile';
 import BottomNav from '@/components/BottomNav';
 import MainLayout from '@/layouts/MainLayout';
 import Gofra from '../Gofra';
-import Order from '@/pages/Order';
+import Cart from '@/pages/Cart';
 import Wishlist from '@/pages/Wishlist';
 import ProfileLayout from '@/layouts/ProfileLayout';
 import styles from './App.module.scss';
@@ -47,7 +47,7 @@ const App = () => {
         >
           <Route index element={<Home />} />
           <Route path="products/gofra" element={<Gofra />} />
-          <Route path="order" element={<Order />} />
+          <Route path="cart" element={<Cart />} />
           <Route path="register" element={<Register />} />
           <Route path="profile/*" element={<ProfileLayout />}>
             <Route path="" element={<Profile />} />

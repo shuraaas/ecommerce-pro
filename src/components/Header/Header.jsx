@@ -164,7 +164,7 @@ const Header = ({ handleClick, handleOpenBurgerMenu }) => {
                 <MdFavorite size={25} color="red" />
                 <span>Избранное</span>
               </Link>
-              <Link className={styles.button} to="order">
+              <Link className={styles.button} to="cart">
                 <Badge size="middle" color="red" count={1}>
                   <MdShoppingCart size={25} color="red" />
                 </Badge>
