@@ -47,10 +47,10 @@ const ProductsCard = data => {
   return (
     <li className={styles.card}>
       <div className={styles.prewiev}>
-        <a href="#">
+        <Link to="#">
           {/* <img className={styles.img} src="https://placehold.co/200" alt="" /> */}
           <img className={styles.img} src={image[0] || image} alt={title} />
-        </a>
+        </Link>
         <a className={styles.link} href="#">
           <p className={styles.title}>{title}</p>
         </a>

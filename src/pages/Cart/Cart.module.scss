@@ -13,13 +13,20 @@
 .cartInner {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
 }
 
-.main {
+.massSelection {
   display: flex;
-  flex-direction: column;
-  gap: 15px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #eee;
+  border-radius: 10px;
+  padding: 5px 15px;
+
+  label {
+    padding-block: 5px;
+  }
 }
 
 .list {
@@ -36,7 +43,7 @@
   flex-direction: column;
   gap: 10px;
   border-radius: 10px;
-  padding: 20px;
+  padding: 15px;
   background-color: #eee;
 }
 

@@ -47,6 +47,7 @@ const App = () => {
         >
           <Route index element={<Home />} />
           <Route path="products/gofra" element={<Gofra />} />
+          {/* <Route path="products/:id" element={< />} /> */}
           <Route path="cart" element={<Cart />} />
           <Route path="register" element={<Register />} />
           <Route path="profile/*" element={<ProfileLayout />}>
