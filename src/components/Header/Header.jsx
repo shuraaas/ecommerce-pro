@@ -22,6 +22,8 @@ const Header = ({ handleClick, handleOpenBurgerMenu }) => {
   const [isOpenSearch, setIsOpenSearch] = useState(false);
   const [isOpenTagsBar, setIsOpenTagsBar] = useState(false);
   const isLoggedIn = useSelector(state => state.user.isLoggedIn);
+  const wishlistLength = useSelector(state => state.wishlist.items).length;
+  const cartLength = useSelector(state => state.cart.items).length;
 
   const popularTags = [
     'tag',
@@ -161,11 +163,13 @@ const Header = ({ handleClick, handleOpenBurgerMenu }) => {
                 <span>Сравнение</span>
               </button>
               <Link className={styles.button} to="wishlist">
-                <MdFavorite size={25} color="red" />
+                <Badge size="middle" color="red" count={wishlistLength}>
+                  <MdFavorite size={25} color="red" />
+                </Badge>
                 <span>Избранное</span>
               </Link>
               <Link className={styles.button} to="cart">
-                <Badge size="middle" color="red" count={1}>
+                <Badge size="middle" color="red" count={cartLength}>
                   <MdShoppingCart size={25} color="red" />
                 </Badge>
                 <span>Корзина</span>

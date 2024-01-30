@@ -24,7 +24,7 @@ const menu = [
         children: [
           {
             name: 'Труба гофрированная',
-            link: '/products/gofra',
+            link: '/products/1',
           },
         ],
       },

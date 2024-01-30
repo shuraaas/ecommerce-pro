@@ -1,12 +1,19 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import Breadcrumbs from '@/components/Breadcrumbs';
-import styles from './Products.module.scss';
+import { useParams, Link } from 'react-router-dom';
+
 import { Rate, Space, Descriptions } from 'antd';
+
+import { useSelector, useDispatch } from 'react-redux';
+import { addToCart } from '@/store/slices/cartSlice';
+import { toggleWishlistItem } from '@/store/slices/wishlistSlice';
+
 import { CiHeart } from 'react-icons/ci';
+import { PiCheck } from 'react-icons/pi';
+
+import Breadcrumbs from '@/components/Breadcrumbs';
 import cn from 'classnames';
-import { useParams } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import styles from './Product.module.scss';
 
 const items = [
   {
@@ -46,11 +53,13 @@ const items = [
   },
 ];
 
-const Products = () => {
+const Product = () => {
+  const dispatch = useDispatch();
   const [amount, setAmount] = useState(0);
   const [value, setValue] = useState(4);
   const { id } = useParams();
   const allProduct = useSelector(state => state.products.items) || [];
+  const productById = allProduct.find(item => item.id.toString() === id) || {};
   const {
     title = 'title',
     image = 'image',
@@ -59,7 +68,11 @@ const Products = () => {
     stock = 1,
     description = 'description',
     artikul = 'artikul',
-  } = allProduct.find(item => item.id.toString() === id) || {};
+  } = productById;
+  const wishlist = useSelector(state => state.wishlist.items);
+  const cart = useSelector(state => state.cart.items);
+  const inWishlist = wishlist.some(item => item.id === productById.id);
+  const inCart = cart.some(item => item.id === productById.id);
 
   const { register, handleSubmit } = useForm({
     defaultValues: {
@@ -74,18 +87,13 @@ const Products = () => {
   const submit = data => console.log(data);
 
   return (
-    <section className={styles.gofra}>
+    <section className={styles.product}>
       <div className={styles.container}>
         <Breadcrumbs lastChild={title} />
         <h2 className={styles.productTitle}>{title}</h2>
         <div className={styles.mainInfo}>
           <div className={styles.mainInfoWrap}>
             <div className={styles.imageSection}>
-              {/* <img
-              className={styles.image}
-              src="https://мкэлектро.рф/images/virtuemart/product/truba-gofrirovannaya-s-protyajkoy-d20-mm-100-m-seraya-tyaj-dkc-2.jpg"
-              alt="Труба гибкая гофрированная с протяжкой DKC 20мм серая тяжел"
-            /> */}
               <div className={styles.allImages}>
                 <img className={styles.active} src="/carousel/1.jpg" alt="" />
                 <img src="/carousel/2.jpg" alt="" />
@@ -94,7 +102,6 @@ const Products = () => {
                 <img src="/carousel/2.jpg" alt="" />
                 <img src="/carousel/3.jpg" alt="" />
               </div>
-
               <img
                 className={styles.mainImage}
                 src={image[0] || image}
@@ -113,12 +120,36 @@ const Products = () => {
               <div className={styles.productOrder}>
                 <div className={styles.order}>
                   <span className={styles.price}>{price} ₽</span>
-                  <button className={cn(styles.btn, styles.btnFavourite)}>
+                  <button
+                    onClick={() => dispatch(toggleWishlistItem(productById))}
+                    className={cn(
+                      styles.btn,
+                      styles.btnFavourite,
+                      inWishlist && styles.btnFavouriteActive,
+                    )}
+                  >
                     <CiHeart size={25} />
                   </button>
-                  <button className={cn(styles.btn, styles.btnToCart)}>
-                    Купить
-                  </button>
+
+                  {inCart ? (
+                    <Link
+                      to="/cart"
+                      className={cn(
+                        styles.btn,
+                        styles.btnToCart,
+                        styles.btnToCartActive,
+                      )}
+                    >
+                      <PiCheck size={25} />
+                    </Link>
+                  ) : (
+                    <button
+                      onClick={() => dispatch(addToCart(productById))}
+                      className={cn(styles.btn, styles.btnToCart)}
+                    >
+                      Купить
+                    </button>
+                  )}
                 </div>
                 <div className={styles.orderInfo}>
                   <div className={styles.inStock}>
@@ -130,35 +161,10 @@ const Products = () => {
                     <a href="#">завтра</a>
                   </div>
                 </div>
-                {/* <div className={styles.orderInfo}>
-                <p>В наличии:</p>
-                <span>Основной склад: {mainStore} ед.</span>
-                <br />
-                <span>Удалённый склад: {remoteStore} ед.</span>
-                <p style={{ fontSize: '26px', paddingTop: '20px' }}>
-                  Итог: {amount * price} руб.
-                </p>
-              </div> */}
-                {/* <form onSubmit={handleSubmit(submit)}>
-                <div>
-                  <button
-                    type="button"
-                    onClick={() => amount && setAmount(amount - 1)}
-                  >
-                    -
-                  </button>
-                  <input type="text" {...register('amount')} value={amount} />
-                  <button type="button" onClick={() => setAmount(amount + 1)}>
-                    +
-                  </button>
-                </div>
-
-                <button className={styles.buy}>Купить</button>
-              </form> */}
               </div>
             </div>
           </div>
-          <span>Код товара: {artikul}</span>
+          <span className={styles.artikul}>Код товара: {artikul}</span>
         </div>
         <div className={styles.specifications}>
           <h3>Характеристики</h3>
@@ -173,4 +179,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default Product;

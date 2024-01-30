@@ -9,14 +9,13 @@ import Orders from '@/pages/ProfilePage/Orders';
 import Club from '@/pages/ProfilePage/Club';
 import Register from '@/pages/Register';
 import Wishlist from '@/pages/Wishlist';
-import Products from '@/pages/Products';
+import Product from '@/pages/Product';
 import Home from '@/pages/Home';
 import Cart from '@/pages/Cart';
 // Components
 import LoginPopup from '@/components/LoginPopup';
 import MenuMobile from '@/components/MenuMobile';
 import BottomNav from '@/components/BottomNav';
-import Gofra from '@/components/Gofra';
 // Layouts
 import ProfileLayout from '@/layouts/ProfileLayout';
 import MainLayout from '@/layouts/MainLayout';
@@ -51,8 +50,7 @@ const App = () => {
           }
         >
           <Route index element={<Home />} />
-          <Route path="products/gofra" element={<Gofra />} />
-          <Route path="products/:id" element={<Products />} />
+          <Route path="products/:id" element={<Product />} />
           <Route path="cart" element={<Cart />} />
           <Route path="register" element={<Register />} />
           <Route path="profile/*" element={<ProfileLayout />}>

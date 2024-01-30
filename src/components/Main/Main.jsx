@@ -82,7 +82,7 @@ const Main = () => {
                     </a>
                     <ul>
                       <li>
-                        <Link to="/products/gofra">Труба гофрированная</Link>
+                        <Link to="/products/1">Труба гофрированная</Link>
                       </li>
                     </ul>
                   </li>

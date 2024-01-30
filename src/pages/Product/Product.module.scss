@@ -1,0 +1,273 @@
+@import '../../scss/_media_breakpoints.scss';
+@import '../../scss/variables';
+
+.container {
+  max-width: 1200px;
+  min-width: 320px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.product {
+  padding: 0 0 40px;
+}
+
+.productTitle {
+  margin: 0;
+  padding-block: 10px;
+}
+
+.mainInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.imageSection {
+  display: flex;
+  gap: 15px;
+  width: 50%;
+}
+
+.mainImage {
+  flex: 1;
+  background: #fff;
+  display: block;
+  border-radius: 5px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+}
+
+.allImages {
+  width: 100%;
+  max-width: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  img {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    padding: 5px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    position: relative;
+    background-color: #fff;
+
+    &:hover {
+      border-color: red;
+      cursor: pointer;
+    }
+
+    &:after {
+      background-color: #fc7b08;
+      content: '';
+      display: block;
+      height: 100%;
+      left: -24px;
+      position: absolute;
+      top: 0;
+      width: 3px;
+    }
+  }
+
+  .active {
+    border-color: red;
+  }
+}
+
+.mainInfo {
+  padding-bottom: 50px;
+  padding: 15px;
+  background-color: #f6f6f6;
+  border-radius: 5px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.16);
+}
+
+.mainInfoWrap {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.productSection {
+  flex: 1;
+  border-radius: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  padding-right: 15px;
+}
+
+.productInfo {
+  p {
+    margin: 10px 0;
+  }
+
+  span {
+    font-weight: 500;
+  }
+}
+
+.productFullName {
+  margin: 0;
+}
+
+.rating {
+  padding: 8px 15px;
+  // background-color: #fff;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.productOrder {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  width: 100%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.order {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.price {
+  flex: 1;
+  font-size: 24px;
+  font-weight: 600;
+  // background-color: #eee;
+  background: linear-gradient(270deg, #f6f6f6, hsla(0, 0%, 100%, 0));
+  padding-block: 5px;
+  border-radius: 10px;
+}
+
+.btn {
+  min-width: 45px;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-weight: 500;
+  transition: background-color 0.1s ease-in-out;
+}
+
+.btnFavourite {
+  border: 1px solid #bbb;
+  color: #bbb;
+
+  &:hover {
+    background-color: #eee;
+  }
+}
+
+.btnFavouriteActive {
+  border-color: $color-primary;
+  color: $color-primary;
+
+  &:hover {
+    background-color: white;
+    // border-color: #eee;
+    color: #eee;
+  }
+}
+
+.btnToCart {
+  color: #fff;
+  background-color: $color-primary;
+  padding-block: 0;
+  padding-inline: 20px;
+
+  &:hover {
+    background-color: #ca0027;
+  }
+}
+
+.btnToCartActive {
+  background-color: $color-primary;
+  border-color: $color-primary;
+  color: white;
+
+  &:hover {
+    background-color: white;
+    color: #eee;
+  }
+}
+
+.orderInfo {
+  display: flex;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.inStock,
+.delivery {
+  background-color: #f7f7f7;
+  padding: 5px 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    box-shadow: inset 0 0 0 50px rgba(0, 0, 0, 0.02);
+  }
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+@include mobile {
+  .container {
+    min-width: 320px;
+    width: 100%;
+    padding-inline: 15px;
+  }
+
+  .mainInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .mainInfoWrap {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .imageSection {
+    flex-direction: column-reverse;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .allImages {
+    flex-direction: row;
+    max-width: unset;
+    gap: 10px;
+  }
+
+  .productSection {
+    padding: 0;
+  }
+}
