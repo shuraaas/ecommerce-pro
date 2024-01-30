@@ -40,15 +40,14 @@
 }
 
 .allImages {
-  width: 100%;
-  max-width: 60px;
   display: flex;
   flex-direction: column;
   gap: 15px;
+  overflow: scroll;
 
   img {
     width: 100%;
-    max-width: 150px;
+    max-width: 60px;
     height: auto;
     display: block;
     object-fit: contain;
@@ -263,7 +262,7 @@
 
   .allImages {
     flex-direction: row;
-    max-width: unset;
+    // max-width: 50px;
     gap: 10px;
   }
 
