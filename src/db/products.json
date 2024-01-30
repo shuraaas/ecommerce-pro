@@ -50,7 +50,7 @@
     "updated": "2023-09-04T10:14:54.550223Z",
     "category": null,
     "brand": null,
-    "stock": 2,
+    "stock": 5,
     "rating": 3
   },
   {
@@ -77,7 +77,7 @@
     "updated": "2023-09-04T10:17:04.853514Z",
     "category": 3,
     "brand": null,
-    "stock": 2,
+    "stock": 32,
     "rating": 5
   },
   {
@@ -100,7 +100,7 @@
     "updated": "2023-09-04T10:17:14.400915Z",
     "category": 3,
     "brand": null,
-    "stock": 2,
+    "stock": 27,
     "rating": 2
   }
 ]

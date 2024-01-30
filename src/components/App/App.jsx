@@ -1,21 +1,26 @@
 import { Routes, Route, useNavigate } from 'react-router-dom';
-import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import Register from '@/pages/Register';
-import NotFoundPage from '@/pages/NotFoundPage';
-import Home from '@/pages/Home';
-import Profile from '@/pages/ProfilePage/Profile';
-import Club from '@/pages/ProfilePage/Club';
+import { useState } from 'react';
+// Pages
 import Delivery from '@/pages/ProfilePage/Delivery';
+import Profile from '@/pages/ProfilePage/Profile';
+import NotFoundPage from '@/pages/NotFoundPage';
 import Orders from '@/pages/ProfilePage/Orders';
+import Club from '@/pages/ProfilePage/Club';
+import Register from '@/pages/Register';
+import Wishlist from '@/pages/Wishlist';
+import Products from '@/pages/Products';
+import Home from '@/pages/Home';
+import Cart from '@/pages/Cart';
+// Components
 import LoginPopup from '@/components/LoginPopup';
 import MenuMobile from '@/components/MenuMobile';
 import BottomNav from '@/components/BottomNav';
-import MainLayout from '@/layouts/MainLayout';
-import Gofra from '../Gofra';
-import Cart from '@/pages/Cart';
-import Wishlist from '@/pages/Wishlist';
+import Gofra from '@/components/Gofra';
+// Layouts
 import ProfileLayout from '@/layouts/ProfileLayout';
+import MainLayout from '@/layouts/MainLayout';
+
 import styles from './App.module.scss';
 
 const App = () => {
@@ -47,7 +52,7 @@ const App = () => {
         >
           <Route index element={<Home />} />
           <Route path="products/gofra" element={<Gofra />} />
-          {/* <Route path="products/:id" element={< />} /> */}
+          <Route path="products/:id" element={<Products />} />
           <Route path="cart" element={<Cart />} />
           <Route path="register" element={<Register />} />
           <Route path="profile/*" element={<ProfileLayout />}>
