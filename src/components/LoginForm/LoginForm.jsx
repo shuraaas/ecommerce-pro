@@ -68,12 +68,12 @@ const LoginForm = ({ buttonText, handleLogin }) => {
         <label className={styles.label}>
           <input
             className={styles.input}
-            // onInput={handlePhoneInput}
-            // onKeyDown={handlePhoneKeyDown}
-            // type="tel"
-            type="text"
+            onInput={handlePhoneInput}
+            onKeyDown={handlePhoneKeyDown}
+            type="tel"
+            // type="text"
             placeholder=" "
-            {...register('name', { required: true, maxLength: 18 })}
+            {...register('phone', { required: true, maxLength: 18 })}
           />
           <span>Логин</span>
         </label>

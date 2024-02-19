@@ -1,5 +1,5 @@
 import { Button, Checkbox } from 'antd';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { GoPlus, GoDash, GoTrash } from 'react-icons/go';
 import styles from './ShopCartCard.module.scss';
 import cn from 'classnames';
@@ -9,7 +9,17 @@ import { removeFromCart } from '@/store/slices/cartSlice';
 const ShopCartCard = item => {
   const [checked, setChecked] = useState(true);
   const [amount, setAmount] = useState(1);
+  const [totalPrice, setTotalPrice] = useState(item.price);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    calculateFinalItemPrice();
+  }, [amount]);
+
+  const calculateFinalItemPrice = () => {
+    setTotalPrice(totalPrice * amount);
+    return totalPrice;
+  };
 
   return (
     <li className={styles.card}>
@@ -39,7 +49,7 @@ const ShopCartCard = item => {
         <div className={styles.countButtons}>
           <button
             className={styles.button}
-            onClick={() => setAmount(amount - 1)}
+            onClick={() => amount > 1 && setAmount(amount - 1)}
           >
             <GoDash size={20} />
           </button>
@@ -51,7 +61,7 @@ const ShopCartCard = item => {
             <GoPlus size={20} />
           </button>
         </div>
-        <span className={styles.price}>33 998 ₽</span>
+        <span className={styles.price}>{totalPrice} ₽</span>
       </div>
     </li>
   );

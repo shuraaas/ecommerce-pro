@@ -1,4 +1,5 @@
 import { Divider, Descriptions } from 'antd';
+import { useSelector } from 'react-redux';
 import styles from './Profile.module.scss';
 
 const items1 = [
@@ -38,12 +39,14 @@ const items2 = [
 ];
 
 const Profile = () => {
+  const user = useSelector(state => state.user);
+
   return (
     <>
       <h2 className={styles.title}>Профиль</h2>
       <div className={styles.profileWrap}>
         <div className={styles.userInfo}>
-          <h2>Александр</h2>
+          <h2>{user.phone}</h2>
           <span>Статус: Basic</span>
           <Divider />
           <Descriptions column={1} items={items1} />

@@ -1,6 +1,6 @@
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 // Pages
 import Delivery from '@/pages/ProfilePage/Delivery';
 import Profile from '@/pages/ProfilePage/Profile';
@@ -27,6 +27,12 @@ const App = () => {
   const [isOpenBurgerMenu, setIsOpenBurgerMenu] = useState(false);
   const loggedIn = useSelector(state => state.user.isLoggedIn);
   const navigate = useNavigate();
+
+  // useEffect(() => {
+  //   fetch('http://45.80.68.71:8000/api/product/')
+  //     .then(res => res.json())
+  //     .then(data => console.log(data));
+  // }, []);
 
   const handleProfileClick = () => {
     if (loggedIn) {

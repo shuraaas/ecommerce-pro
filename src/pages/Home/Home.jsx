@@ -7,7 +7,8 @@ import Main from '@/components/Main';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { addProducts } from '@/store/slices/productsSlice';
-import data from '@/db/products.json';
+// import data from '@/db/products.json';
+import data from '@/db/items.products.json';
 
 const Home = () => {
   const dispatch = useDispatch();

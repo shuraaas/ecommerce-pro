@@ -59,12 +59,15 @@ const Product = () => {
   const [value, setValue] = useState(4);
   const { id } = useParams();
   const allProduct = useSelector(state => state.products.items) || [];
-  const productById = allProduct.find(item => item.id.toString() === id) || {};
+  // console.log(allProduct.find(item => item._id.$oid)
+  const productById = allProduct.find(item => item._id.$oid === id) || {};
+  console.log(productById);
+
   const {
-    title = 'title',
-    image = 'image',
+    gdsNameTitle = 'title',
+    image = 'https://placehold.co/350',
     rating = 1,
-    price = 1,
+    gdsPrice1 = 1,
     stock = 1,
     description = 'description',
     artikul = 'artikul',
@@ -89,8 +92,8 @@ const Product = () => {
   return (
     <section className={styles.product}>
       <div className={styles.container}>
-        <Breadcrumbs lastChild={title} />
-        <h2 className={styles.productTitle}>{title}</h2>
+        <Breadcrumbs lastChild={gdsNameTitle} />
+        <h2 className={styles.productTitle}>{gdsNameTitle}</h2>
         <div className={styles.mainInfo}>
           <div className={styles.mainInfoWrap}>
             <div className={styles.imageSection}>
@@ -104,13 +107,13 @@ const Product = () => {
               </div>
               <img
                 className={styles.mainImage}
-                src={image[0] || image}
-                alt={title}
+                src="https://placehold.co/350"
+                alt={gdsNameTitle}
               />
             </div>
 
             <div className={styles.productSection}>
-              <h3 className={styles.productFullName}>{title}</h3>
+              <h3 className={styles.productFullName}>{gdsNameTitle}</h3>
               <div className={styles.rating}>
                 <Space>
                   <Rate tooltips={desc} onChange={setValue} value={rating} />
@@ -119,7 +122,7 @@ const Product = () => {
               </div>
               <div className={styles.productOrder}>
                 <div className={styles.order}>
-                  <span className={styles.price}>{price} ₽</span>
+                  <span className={styles.price}>{gdsPrice1} ₽</span>
                   <button
                     onClick={() => dispatch(toggleWishlistItem(productById))}
                     className={cn(

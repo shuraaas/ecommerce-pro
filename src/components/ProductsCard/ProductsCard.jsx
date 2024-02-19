@@ -10,9 +10,11 @@ import styles from './ProductsCard.module.scss';
 import { Link } from 'react-router-dom';
 
 const ProductsCard = data => {
+  // console.log(data._id.$oid);
+
   const {
-    id,
-    title,
+    _id,
+    gdsNameTitle,
     artikul,
     sku,
     weight,
@@ -23,7 +25,7 @@ const ProductsCard = data => {
     slug,
     image,
     description,
-    price,
+    gdsPrice1,
     quantity,
     available,
     created,
@@ -37,8 +39,8 @@ const ProductsCard = data => {
   const [value, setValue] = useState(3);
   const wishlist = useSelector(state => state.wishlist.items);
   const cart = useSelector(state => state.cart.items);
-  const inWishlist = wishlist.some(item => item.id === data.id);
-  const inCart = cart.some(item => item.id === data.id);
+  // const inWishlist = wishlist.some(item => item.id === data.id);
+  // const inCart = cart.some(item => item.id === data.id);
 
   const handleWishlistClick = () => dispatch(toggleWishlistItem(data));
 
@@ -47,12 +49,12 @@ const ProductsCard = data => {
   return (
     <li className={styles.card}>
       <div className={styles.prewiev}>
-        <Link to={`/products/${id}`}>
+        <Link to={`/products/${_id.$oid}`}>
           {/* <img className={styles.img} src="https://placehold.co/200" alt="" /> */}
-          <img className={styles.img} src={image[0] || image} alt={title} />
+          <img className={styles.img} src='https://placehold.co/350' alt={gdsNameTitle} />
         </Link>
-        <Link to={`/products/${id}`} className={styles.link} href="#">
-          <p className={styles.title}>{title}</p>
+        <Link to={`/products/${_id.$oid}`} className={styles.link} href="#">
+          <p className={styles.title}>{gdsNameTitle}</p>
         </Link>
       </div>
       <div className={styles.info}>
@@ -61,18 +63,18 @@ const ProductsCard = data => {
           <Rate className={styles.rate} value={rating} onChange={setValue} />
         </div>
         <div className={styles.order}>
-          <span className={styles.price}>{price} ₽</span>
+          <span className={styles.price}>{gdsPrice1} ₽</span>
           <button
             onClick={handleWishlistClick}
             className={cn(
               styles.btn,
               styles.btnFavourite,
-              inWishlist && styles.btnFavouriteActive,
+              // inWishlist && styles.btnFavouriteActive,
             )}
           >
             <PiHeart size={25} />
           </button>
-          {inCart ? (
+          {/* {inCart ? (
             <Link
               to="/cart"
               className={cn(
@@ -83,14 +85,14 @@ const ProductsCard = data => {
             >
               <PiCheck size={25} />
             </Link>
-          ) : (
+          ) : ( */}
             <button
               onClick={handleCartClick}
               className={cn(styles.btn, styles.btnToCart)}
             >
               <PiShoppingCartLight size={25} />
             </button>
-          )}
+          {/* )} */}
         </div>
       </div>
     </li>

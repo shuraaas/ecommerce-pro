@@ -16,6 +16,7 @@
     "axios": "^1.6.0",
     "classnames": "^2.3.2",
     "framer-motion": "^10.16.4",
+    "mongodb": "^6.3.0",
     "normalize.css": "^8.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -25,6 +26,7 @@
     "react-router-dom": "^6.17.0",
     "sass": "^1.69.5",
     "swiper": "^11.0.3",
+    "util.promisify": "^1.1.2",
     "uuid": "^9.0.1"
   },
   "devDependencies": {

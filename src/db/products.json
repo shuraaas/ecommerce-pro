@@ -16,7 +16,7 @@
       "https://мкэлектро.рф/images/virtuemart/product/klemmnik-fixprovod-2-2273-202.jpg"
     ],
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, quibusdam?",
-    "price": "160",
+    "price": 160,
     "quantity": 8,
     "available": true,
     "created": "2023-09-04T10:14:57.882807Z",
@@ -43,7 +43,7 @@
       "https://мкэлектро.рф/images/virtuemart/product/samorez-chernyy-mm-klop-39h11-sverlo.png"
     ],
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, quibusdam?",
-    "price": "2729",
+    "price": 279,
     "quantity": 2,
     "available": true,
     "created": "2023-09-04T10:14:54.550196Z",
@@ -70,7 +70,7 @@
       "https://мкэлектро.рф/images/virtuemart/product/shurup-potay-dlya-dereva-jc-3h16-3000-sht-.jpg"
     ],
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, quibusdam?",
-    "price": "91",
+    "price": 91,
     "quantity": 10,
     "available": true,
     "created": "2023-09-04T10:14:51.131421Z",
@@ -93,7 +93,7 @@
     "slug": "slug-20049",
     "image": ["https://placehold.co/350"],
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, quibusdam?",
-    "price": "349",
+    "price": 349,
     "quantity": 237,
     "available": true,
     "created": "2023-09-04T10:15:01.380052Z",

@@ -6,6 +6,7 @@ const initialState = {
   name: '',
   password: '',
   isLoggedIn: false,
+  phone: '',
 };
 
 const userSlice = createSlice({
@@ -17,6 +18,7 @@ const userSlice = createSlice({
       state.name = action.payload.name;
       state.password = action.payload.password;
       state.isLoggedIn = !state.isLoggedIn;
+      state.phone = action.payload.phone;
     },
     logout: (state) => state = initialState,
   },

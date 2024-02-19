@@ -1,6 +1,7 @@
 import styles from './MenuMobile.module.scss';
 import cn from 'classnames';
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import IconsGenerator from '../IconsGenerator';
 import { Link } from 'react-router-dom';
 
@@ -149,6 +150,13 @@ const menu = [
 // ];
 
 const MenuMobile = ({ isOpen, onClose }) => {
+  const products = useSelector(state => state.products.items);
+  const firstLevel = products.map(item => item.gdsClassTree[0]);
+  const uniqueGroups = firstLevel.map(item => {
+    return item.name;
+  });
+  const uniqueGroupsSet = new Set(uniqueGroups);
+
   const [level, setLevel] = useState(1);
   const [currentMenu, setCurrentMenu] = useState([menu]);
 
@@ -220,7 +228,11 @@ const MenuMobile = ({ isOpen, onClose }) => {
                     {m.link && (
                       <>
                         <IconsGenerator name={m.name} />
-                        <Link className={styles.item} to={m.link} onClick={onClose}>
+                        <Link
+                          className={styles.item}
+                          to={m.link}
+                          onClick={onClose}
+                        >
                           {m.name}
                         </Link>
                       </>
